@@ -8,13 +8,13 @@ This system is designed for disaster situations that may occur in Sri Lanka, suc
 
 Main Features
 
-User can enter name and contact number.
-User can select the disaster type from a dropdown list.
-User can upload up to three disaster photos.
-Submitted data is stored in a MySQL database.
-Uploaded photos are saved inside an uploads folder.
-Photo file paths are stored in the database.
-Admin can view all disaster reports in a table.
-Admin can click the View Photos button to display uploaded disaster images.
-Simple and user-friendly interface.
+- Submit disaster reports through a client form
+- Enter name and contact number
+- Select disaster type from a dropdown list
+- Upload up to three disaster photos
+- Store report details in a MySQL database
+- Store uploaded photos in an `uploads` folder
+- View all submitted reports in an admin panel
+- Open uploaded photos using a View Photos button
+
 
