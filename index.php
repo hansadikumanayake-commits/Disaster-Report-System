@@ -3,11 +3,42 @@
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width,initial-scale=1.0">
-            <title>Disaster-Report</title>
+            <title>Disaster-Report-System</title>
+            <link rel="stylesheet" href="style.css">
         </head>
         <body>
+            <h1>DISASTER-REPORT-SYSTEM</h1>
             <form action="submit.php" method="POST" enctype="multipart/form-data">
-                
+            
+            <label>Name:</label>
+            <input type="text" name="name" required><br>
+
+            <label>Contact Number:</label>
+            <input type="text" name="tel" required><br>
+
+            <label>Disaster Type:</label>
+            <select name="disaster" required>
+                <option value="">Select Disaster Type:</option>
+                <option value="Flood">Flood</option>
+                <option value="Landslide">Landslide</option>
+                <option value="Earthquake">Earthquake</option>
+                <option value="Animal Attack">Animal Attack</option>
+                <option value="Drought">Drought</option>
+                <option value="Tsunami">Tsunami</option>
+                <option value="Fire">Fire</option>
+            </select><br>
+
+            <label>Upload photo 1:</label>
+            <input type="file" name="photo1" accept="image/*" capture="environment" required><br>
+
+            <label>Upload photo 2:</label>
+            <input type="file" name="photo2" accept="image/*" capture="environment" required><br>
+
+            <label>Upload photo 3:</label>
+            <input type="file" name="photo3" accept="image/*" capture="environment" required><br>
+
+            <br>
+            <button type="submit">Submit</button>
 
             </form>
         </body>
