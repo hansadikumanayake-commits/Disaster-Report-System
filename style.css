@@ -7,17 +7,18 @@ body {
 
 h1 {
     text-align: center;
-    color: darkolivegreen;
+    color: midnightblue;
     margin-top: 35px;
 }
 
 form {
-    background-color:limegreen;
-    width: 400px;
+    background-color:light cyan;
+    width: 600px;
     margin: 30px auto;
     padding: 25px;
-    border-radius: 10px;
-    color:black
+    border-radius: 20px;
+    color:black;
+    border:2px solid black;
 }
 
 label {
@@ -35,7 +36,7 @@ input, select {
 
 input[type="file"] {
     border: 1px solid black;
-    background-color: yellowgreen;
+    background-color:skyblue;
 }
 
 button {
@@ -50,6 +51,6 @@ button {
 }
 
 button:hover {
-    background-color:forestgreen;
-    color:khaki;
+    background-color:steelblue;
+    color:whitesmoke;
 }
