@@ -7,9 +7,10 @@
             <link rel="stylesheet" href="style.css">
         </head>
         <body>
-            <h1>DISASTER-REPORT-SYSTEM</h1>
-            <form action="submit.php" method="POST" enctype="multipart/form-data">
             
+            <form action="submit.php" method="POST" enctype="multipart/form-data">
+            <h1>DISASTER-REPORT-SYSTEM</h1>
+
             <label>Name:</label>
             <input type="text" name="name" required><br>
 
