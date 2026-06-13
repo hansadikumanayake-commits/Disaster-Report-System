@@ -30,3 +30,6 @@ This project uses HTML, CSS, PHP, MySQL, XAMPP, Git, and GitHub. HTML is used to
 Database Description
 
 The system uses a MySQL database table named disaster_reports. This table stores the report ID, user name, contact number, disaster type, and uploaded photo paths. The actual photos are saved in the uploads folder, while only the photo paths are stored in the database.
+
+Author
+- Hansadi Kumanayake
