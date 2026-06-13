@@ -17,4 +17,9 @@ Main Features
 - View all submitted reports in an admin panel
 - Open uploaded photos using a View Photos button
 
+How the System Works
+
+The system starts with the client report form. The user enters their name and contact number, selects the disaster type from the dropdown list, and uploads up to three disaster-related photos. After clicking the submit button, the data is sent to the PHP backend. PHP saves the uploaded photos inside the uploads folder and stores the report details together with the photo paths in the MySQL database.
+
+The admin panel saves and organizes all submitted disaster reports in a list retrieved from the database. This list displays the user details, disaster type, and a View Photos button for each report. The admin can browse the list to review all submitted reports. When the admin clicks the View Photos button, the system opens a separate page and displays the photos uploaded for that specific disaster report.
 
