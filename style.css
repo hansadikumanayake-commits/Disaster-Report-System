@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: azure;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: darkolivegreen;
+    margin-top: 35px;
+}
+
+form {
+    background-color: skyblue;
+    width: 400px;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 12px;
+}
+
+input, select {
+    width: 100%;
+    padding: 7px;
+    margin-top: 6px;
+    box-sizing: border-box;
+}
+
+input[type="file"] {
+    border: 1px solid papayawhip;
+    background-color: pink;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: silver;
+    color:black;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color:lightgreen;
+    color:midnightblue;
+}
