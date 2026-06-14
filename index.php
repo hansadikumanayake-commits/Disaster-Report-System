@@ -9,7 +9,7 @@
         <body>
             
             <form action="submit.php" method="POST" enctype="multipart/form-data">
-            <h1>DISASTER-REPORT-SYSTEM</h1>
+            <h1>Disaster-Report-System</h1>
 
             <label>Name:</label>
             <input type="text" name="name" required><br>
