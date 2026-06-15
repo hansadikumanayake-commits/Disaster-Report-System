@@ -7,6 +7,7 @@ CREATE TABLE disaster_reports(
 	name varchar(150) not null,
 	tel varchar(10) not null,
 	disaster varchar(100),
+	geotag varchar(255) not null;
 	photo1 varchar(255),
 	photo2 varchar(255),
 	photo3 varchar(255),
