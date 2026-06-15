@@ -29,6 +29,11 @@
                 <option value="Fire">Fire</option>
             </select><br>
 
+
+            <label>GeoTag<label>
+            <input type="text" name="geotag" placeholder="Example:Colombo,79.861244" required><br>
+
+
             <label>Upload photo 1:</label>
             <input type="file" name="photo1" accept="image/*" capture="environment" required><br>
 
