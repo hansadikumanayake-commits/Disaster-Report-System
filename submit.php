@@ -46,9 +46,15 @@ values
 ('$name','$tel','$disaster','$geotag','$photo1','$photo2','$photo3')";
 
 if(mysqli_query($conn,$sql)){
-    echo "Report Submitted";
-    echo "<a href='index.php'>";
+    echo "Report Submitted !";
+    echo "<a href='index.php'> Submit another report</a> <br><br>";
+    echo "<a href='admin.php'> Go to Admin Panel</a>";
+
+}else{
+    echo "Error occured";
 }
+
+mysqli_close($conn);
 
 
 ?>
