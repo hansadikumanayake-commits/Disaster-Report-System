@@ -1,7 +1,8 @@
-
+-- Creating the database for the disaster report system
 CREATE DATABASE disaster_db;
 USE disaster_db;
 
+-- create the table disaster_reports inside the disaster_db database
 CREATE TABLE disaster_reports(
 	id INT auto_increment primary key,
 	name varchar(150) not null,
