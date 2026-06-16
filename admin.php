@@ -70,9 +70,28 @@ $result=mysqli_query($conn,$sql);
             <?php
                 echo $row['created_at'];
             ?></p>
-            
-            <!--link to open photos page for this report -->
-            <a class="photo-btn" href="photos.php?id=<?php echo $row['id']; ?>">View the photos</a>
+
+            <h4>Uploaded photos</h4>
+            <div class="photo-gallery">
+
+                <?php
+                    if(!empty($row['photo1'])){ ?>
+                        <img src="<?php echo $row['photo1'];?>" alt="Disaster Photo 1">
+                   <?php } ?>
+                ?>
+
+                <?php
+                    if(!empty($row['photo2'])){ ?>
+                        <img src="<?php echo $row['photo2'];?>" alt="Disaster Photo 2">
+                   <?php } ?>
+                ?>
+
+                <?php
+                    if(!empty($row['photo3'])){ ?>
+                        <img src="<?php echo $row['photo3'];?>" alt="Disaster Photo 3">
+                   <?php }
+                ?>
+            </div>
         </div>
         <?php } ?>
     </div>
