@@ -31,7 +31,24 @@ function uploadPhoto($photoName,$photo_folder){
         }
 
     }
-    return "";
+    return "";// if the photo didnt upload (upload fails) return empty value
+
 }
+//upload each photo and save its path in each photo accordingly 
+$photo1=uploadPhoto("photo1",$photo_folder);
+$photo2=uploadPhoto("photo2",$photo_folder);
+$photo3=uploadPhoto("photo3",$photo_folder);
+
+//insert the form data into disaster_reports table
+$sql="insert into disaster_reports
+(name,tel,disaster,geotag,photo1,photo2,photo3)
+values
+('$name','$tel','$disaster','$geotag','$photo1','$photo2','$photo3')";
+
+if(mysqli_query($conn,$sql)){
+    echo "Report Submitted";
+    echo "<a href='index.php'>";
+}
+
 
 ?>
