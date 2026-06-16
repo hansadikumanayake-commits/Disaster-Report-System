@@ -12,7 +12,7 @@ h1 {
 }
 
 form {
-    background-color:light cyan;
+    background-color:cyan;
     width: 600px;
     margin: 30px auto;
     padding: 25px;
@@ -79,16 +79,17 @@ button:hover {
     margin:8px 0;
 }
 
-.photo-btn{
-    display:inline-block;
-    margin-top:10px;
-    background-color:cornflowerblue;
-    color:black;
-    padding:8px 14px;
-    text-decoration:none;
-    border-radius:5px;
+.photo-gallery{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:15px;
 }
 
-.photo-btn:hover{
-    background-color:aquamarine;
+.photo-gallery img{
+    width:180px;
+    height:130px;
+    object-fit:cover;
+    border:2px solid midnightblue;
+    border-radius :6px;
 }
