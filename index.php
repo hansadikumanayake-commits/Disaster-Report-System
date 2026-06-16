@@ -4,7 +4,7 @@
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width,initial-scale=1.0">
             <title>Disaster-Report-System</title>
-            //link to the external css file of the form 
+            <!--link to the external css file of the form -->
             <link rel="stylesheet" href="style.css">
         </head>
         <body>
@@ -12,7 +12,7 @@
             <form action="submit.php" method="POST" enctype="multipart/form-data">
             <h1>Disaster-Report-System</h1>
             
-            //information boxes needed
+            <!--information boxes needed-->
             <label>Name:</label>
             <input type="text" name="name" required><br>
 
@@ -35,7 +35,7 @@
             <label>GeoTag<label>
             <input type="text" name="geotag" placeholder="Example:Colombo,79.861244" required><br>
 
-            //file input to display the photo of the disaster
+            <!--file input to display the photo of the disaster-->
             <label>Upload photo 1:</label>
             <input type="file" name="photo1" accept="image/*" capture="environment" required><br>
 
@@ -46,7 +46,7 @@
             <input type="file" name="photo3" accept="image/*" capture="environment" required><br>
 
             <br>
-            //button to submit the form
+            <!--button to submit the form-->
             <button type="submit">Submit</button>
 
             </form>
