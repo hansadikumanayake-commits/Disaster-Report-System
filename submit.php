@@ -57,7 +57,7 @@ if(mysqli_query($conn,$sql)){
 
 }else{
     //if error occured error message will be displayed 
-    echo "Error occured";
+    echo "Error occured".mysqli_error($conn);
 }
 //close the database connecion
 mysqli_close($conn);
