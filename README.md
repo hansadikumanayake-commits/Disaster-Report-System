@@ -23,17 +23,6 @@ The system starts with the client report form. The user enters their name and co
 
 The admin panel saves and organizes all submitted disaster reports in a list retrieved from the database. This list displays the user details, disaster type, and a View Photos button for each report. The admin can browse the list to review all submitted reports. When the admin clicks the View Photos button, the system opens a separate page and displays the photos uploaded for that specific disaster report.
 
-Simply,
-
-User submits form from index.php
-            ↓
-submit.php saves data into MySQL 
-            ↓
-admin.php reads data from MySQL 
-            ↓ 
-admin.php displays all reports in a table
-
-
 Technologies Used
 
 This project uses HTML, CSS, PHP, MySQL, XAMPP, Git, and GitHub. HTML is used to create the page structure, CSS is used for styling, PHP is used for backend processing, and MySQL is used to store disaster report details. Uploaded photos are saved in the uploads folder on the server, while their file paths are stored in the MySQL database. XAMPP is used to run the project locally.
