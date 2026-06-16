@@ -77,13 +77,13 @@ $result=mysqli_query($conn,$sql);
                 <?php
                     if(!empty($row['photo1'])){ ?>
                         <img src="<?php echo $row['photo1'];?>" alt="Disaster Photo 1">
-                   <?php } ?>
+                   <?php } 
                 ?>
 
                 <?php
                     if(!empty($row['photo2'])){ ?>
                         <img src="<?php echo $row['photo2'];?>" alt="Disaster Photo 2">
-                   <?php } ?>
+                   <?php } 
                 ?>
 
                 <?php
