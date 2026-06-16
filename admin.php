@@ -97,7 +97,8 @@ $result=mysqli_query($conn,$sql);
     </div>
     <br>
     <!--link back to the disaster report form-->
-    <a href="index.php">Back to Form</a>
+    <div class="back-btn-container">
+    <a class="back-btn" href="index.php">Back to Form</a></div>
 
     </body>
 </html>
