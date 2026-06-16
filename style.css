@@ -54,3 +54,41 @@ button:hover {
     background-color:#0a2351;
     color:whitesmoke;
 }
+
+.report-list{
+    width:80%;
+    margin:30px auto;
+}
+
+.report-card{
+    background-color:white;
+    padding:20px;
+    margin-bottom:20px;
+    border-left:5px solid midnightblue;
+    border-radius:8px;
+    box-shadow:0 0 8px rgba(0,0,0,0.1);
+}
+
+.report-card h3{
+    background-color:aliceblue;
+    margin-top:0;
+}
+
+.report-card p{
+    font-size:16px;
+    margin:8px 0;
+}
+
+.photo-btn{
+    display:inline-block;
+    margin-top:10px;
+    background-color:cornflowerblue;
+    color:black;
+    padding:8px 14px;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+.photo-btn:hover{
+    background-color:aquamarine;
+}
