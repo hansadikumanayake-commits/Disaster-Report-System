@@ -45,15 +45,21 @@ $sql="insert into disaster_reports
 values
 ('$name','$tel','$disaster','$geotag','$photo1','$photo2','$photo3')";
 
+//run sql query & check whetehr data inserted 
 if(mysqli_query($conn,$sql)){
     echo "Report Submitted !";
+
+//link to go back to formand submit another report
     echo "<a href='index.php'> Submit another report</a> <br><br>";
+
+//link to open th admin panel
     echo "<a href='admin.php'> Go to Admin Panel</a>";
 
 }else{
+    //if error occured error message will be displayed 
     echo "Error occured";
 }
-
+//close the database connecion
 mysqli_close($conn);
 
 
