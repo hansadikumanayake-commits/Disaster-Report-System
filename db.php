@@ -9,7 +9,7 @@
     $db_pass="";
 
     //name of the database to be connected
-    $db_name="disaster_db";
+    $db_name="disaster_report";
 
     //variable to store database connection
     $conn="";

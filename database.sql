@@ -1,6 +1,6 @@
 -- Creating the database for the disaster report system
-CREATE DATABASE disaster_db;
-USE disaster_db;
+CREATE DATABASE disaster_report;
+USE disaster_report;
 
 -- create the table disaster_reports inside the disaster_db database
 CREATE TABLE disaster_reports(
