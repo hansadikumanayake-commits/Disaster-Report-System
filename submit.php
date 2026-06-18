@@ -48,6 +48,8 @@ values
 //run sql query & check whetehr data inserted 
 if(mysqli_query($conn,$sql)){
     echo "Report Submitted !";
+    echo "<br>";
+    echo "<br>";
 
 //link to go back to formand submit another report
     echo "<a href='index.php'> Submit another report</a> <br><br>";
