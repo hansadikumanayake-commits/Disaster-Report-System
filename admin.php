@@ -75,19 +75,25 @@ $result=mysqli_query($conn,$sql);
             <div class="photo-gallery">
 
                 <?php
+                    // Check whether photo1 exists before displaying it
                     if(!empty($row['photo1'])){ ?>
+                    <!--display the 1st uploaded photo-->
                         <img src="<?php echo $row['photo1'];?>" alt="Disaster Photo 1">
                    <?php } 
                 ?>
 
                 <?php
+                //checknwhether photo2 before displaying it 
                     if(!empty($row['photo2'])){ ?>
+                    <!--display the 2nd uploaded photo-->
                         <img src="<?php echo $row['photo2'];?>" alt="Disaster Photo 2">
                    <?php } 
                 ?>
 
                 <?php
+                //check whether photo3 before  displaying it
                     if(!empty($row['photo3'])){ ?>
+                    <!--display the 3rd uploaded photo-->
                         <img src="<?php echo $row['photo3'];?>" alt="Disaster Photo 3">
                    <?php }
                 ?>
