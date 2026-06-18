@@ -18,7 +18,7 @@
         //create connection with mysql database
         $conn=mysqli_connect($db_server,$db_user,$db_pass,$db_name);
     }
-
+//if the database couldnt connect
     catch(mysqli_sql_exception){
         echo "could not connect <br>";
     }
