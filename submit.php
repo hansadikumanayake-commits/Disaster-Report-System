@@ -47,12 +47,11 @@ values
 
 //run sql query & check whetehr data inserted 
 if(mysqli_query($conn,$sql)){
-    echo "Report Submitted !";
-    echo "<br>";
-    echo "<br>";
-
-//link to go back to formand submit another report
-    echo "<a href='index.php'> Submit another report</a> <br><br>"; 
+echo "<div class='success-box'>";
+echo "<h2>Report Submitted Successfully!</h2>";
+echo "<p>Your disaster report has been saved.</p>";
+echo "<a class='submit-another-btn' href='index.php'>Submit Another Report</a>";
+echo "</div>";
 
 }else{
     //if error occured error message will be displayed 
