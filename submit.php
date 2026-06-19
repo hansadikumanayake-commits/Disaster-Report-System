@@ -49,7 +49,7 @@ values
 if(mysqli_query($conn,$sql)){
 echo "<div class='success-box'>";
 echo "<h2>Report Submitted Successfully!</h2>";
-echo "<p>Your disaster report has been saved.</p>";
+echo "<p>Disaster report has been saved.</p>";
 echo "<a class='submit-another-btn' href='index.php'>Submit Another Report</a>";
 echo "</div>";
 
