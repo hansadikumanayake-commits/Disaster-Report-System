@@ -1,3 +1,10 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset ="UTF-8">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
 <?php
 //connect the database
 include 'db.php';
@@ -47,7 +54,7 @@ values
 
 //run sql query & check whetehr data inserted 
 if(mysqli_query($conn,$sql)){
-echo "<div class='success-box'>";
+echo "<div class='submit-message'>";
 echo "<h2>Report Submitted Successfully!</h2>";
 echo "<p>Disaster report has been saved.</p>";
 echo "<a class='submit-another-btn' href='index.php'>Submit Another Report</a>";
@@ -55,10 +62,15 @@ echo "</div>";
 
 }else{
     //if error occured error message will be displayed 
-    echo "Error occured".mysqli_error($conn);
+    echo "<div class='submit-message'>";
+    echo "<h2>Error Occurred</h2>";
+    echo "<p>".mysqli_error($conn)."</p>";
+    echo "<a class='submit-another-btn' href='index.php'>Back to Form</a>";
+    echo "</div>";
 }
 //close the database connecion
 mysqli_close($conn);
-
-
 ?>
+
+    </body>
+</html>
