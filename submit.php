@@ -52,10 +52,7 @@ if(mysqli_query($conn,$sql)){
     echo "<br>";
 
 //link to go back to formand submit another report
-    echo "<a href='index.php'> Submit another report</a> <br><br>";
-
-//link to open th admin panel
-    echo "<a href='admin.php'> Go to Admin Panel</a>";
+    echo "<a href='index.php'> Submit another report</a> <br><br>"; 
 
 }else{
     //if error occured error message will be displayed 
