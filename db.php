@@ -1,4 +1,5 @@
 <?php
+//to connect PHP to MySQL database
     //database server name
     $db_server="localhost";
 
@@ -22,7 +23,7 @@
     catch(mysqli_sql_exception){
         echo "could not connect <br>";
     }
-    //check if the connection is not successful
+    //check if the connection is not successful and if not then give out a message
     if(!$conn){
         echo "database not connected";
     }

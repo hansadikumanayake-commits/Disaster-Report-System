@@ -8,7 +8,6 @@
 <?php
 //connect the database
 include 'db.php';
- 
 
 //getting form data
 $name=$_POST["name"];
