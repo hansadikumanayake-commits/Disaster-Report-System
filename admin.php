@@ -78,7 +78,7 @@ $result=mysqli_query($conn,$sql);
                     // Check whether photo1 exists before displaying it
                     if(!empty($row['photo1'])){ ?>
                     <!--display the 1st uploaded photo-->
-                        <img src="<?php echo $row['photo1'];?>" alt="Disaster Photo 1">
+                        <img src="<?php echo $row['photo1'];?>"  alt="Disaster Photo 1">
                    <?php } 
                 ?>
 
@@ -86,7 +86,7 @@ $result=mysqli_query($conn,$sql);
                 //checknwhether photo2 before displaying it 
                     if(!empty($row['photo2'])){ ?>
                     <!--display the 2nd uploaded photo-->
-                        <img src="<?php echo $row['photo2'];?>" alt="Disaster Photo 2">
+                        <img src="<?php echo $row['photo2'];?>"  alt="Disaster Photo 2">
                    <?php } 
                 ?>
 
@@ -94,7 +94,7 @@ $result=mysqli_query($conn,$sql);
                 //check whether photo3 before  displaying it
                     if(!empty($row['photo3'])){ ?>
                     <!--display the 3rd uploaded photo-->
-                        <img src="<?php echo $row['photo3'];?>" alt="Disaster Photo 3">
+                        <img src="<?php echo $row['photo3'];?>"  alt="Disaster Photo 3">
                    <?php }
                 ?>
             </div>
