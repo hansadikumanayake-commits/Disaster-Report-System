@@ -13,3 +13,4 @@ CREATE TABLE disaster_reports(
 	photo2 varchar(255),
 	photo3 varchar(255),
 	created_at timestamp default current_timestamp);
+	
