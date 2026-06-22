@@ -22,7 +22,7 @@ $photo_folder="uploads/";
 function uploadPhoto($photoName,$photo_folder){
 //to check whether photo is uploaded correctly
 // 1 check whether file input exists
-// 2 check whether uplaod had no error
+// 2 check whether upload had no errors
     if(isset($_FILES[$photoName])&& $_FILES[$photoName]['error']==0){
         // creating the filename with the uploading time
         $file_name=time()."_".basename($_FILES[$photoName]['name']);
