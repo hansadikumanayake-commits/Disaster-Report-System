@@ -32,8 +32,8 @@
             </select><br>
 
 
-            <label>Location:<label>
-            <input type="text" name="location" placeholder="Example:Colombo,79.861244" required><br>
+            <label>GeoTag<label>
+            <input type="text" name="geotag" placeholder="Example:Colombo,79.861244" required><br>
 
             <!--file input to display the photo of the disaster-->
             <label>Upload photo 1:</label>
