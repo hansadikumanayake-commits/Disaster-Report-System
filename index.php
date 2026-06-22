@@ -32,7 +32,7 @@
             </select><br>
 
 
-            <label>GeoTag<label>
+            <label>GeoTag:<label>
             <input type="text" name="geotag" placeholder="Example:Colombo,79.861244" required><br>
 
             <!--file input to display the photo of the disaster-->
