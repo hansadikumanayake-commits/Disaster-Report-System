@@ -8,7 +8,7 @@
             <link rel="stylesheet" href="style.css">
         </head>
         <body>
-                                                    <!--Send the form data in a way that can include files/photos-->
+            <!--Send the form data in a way that can include files/photos and the form data to submit.php-->
             <form action="submit.php" method="POST" enctype="multipart/form-data">
             <h1>Disaster-Report-System</h1>
             
