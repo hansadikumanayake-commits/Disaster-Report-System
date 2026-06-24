@@ -13,7 +13,8 @@ include 'db.php';
 $name=$_POST["name"];
 $tel=$_POST["tel"];
 $disaster=$_POST["disaster"];
-$geotag=$_POST["geotag"];
+$district=$_POST["district"];
+$gn=$_POST["gn"];
 
 //save the uploaded photos inside the upload folder
 $photo_folder="uploads/";
@@ -47,9 +48,9 @@ $photo3=uploadPhoto("photo3",$photo_folder);
 
 //insert the form data into disaster_reports table
 $sql="insert into disaster_reports
-(name,tel,disaster,geotag,photo1,photo2,photo3)
+(name,tel,disaster,disaster,gn,photo1,photo2,photo3)
 values
-('$name','$tel','$disaster','$geotag','$photo1','$photo2','$photo3')";
+('$name','$tel','$disaster','$district','$gn','$photo1','$photo2','$photo3')";
 
 //run sql query & check whetehr data inserted 
 if(mysqli_query($conn,$sql)){
