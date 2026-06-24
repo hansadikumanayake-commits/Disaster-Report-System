@@ -59,10 +59,16 @@ $result=mysqli_query($conn,$sql);
                 echo $row['disaster'];
             ?></p>
 
-            <!--display the geotag (info of the photo)-->
-            <p><strong>GeoTag:</strong>
+            <!--display the incident district-->
+            <p><strong>District:</strong>
             <?php
-                echo $row['geotag'];
+                echo $row['district'];
+            ?></p>
+
+            <!--display grama niladhari division of the incident location-->
+            <p><strong>Grama-Niladhari Division:</strong>
+            <?php
+                echo $row['gn'];
             ?></p>
 
             <!--display the submitted date -->
