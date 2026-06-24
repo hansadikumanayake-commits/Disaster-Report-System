@@ -10,15 +10,19 @@ This system is designed for disaster situations that may occur in Sri Lanka
 ## Main Features
 
 * Submit disaster reports through a client form
-* Enter name and contact number
+* Login in to the system using username and password
+* Generate OTP automatically by the system for verification
+* Enter user details like name and contact number
 * Select disaster type from a dropdown list
-* Enter a GeoTag or district related to the disaster
+* Enter the location under using the district and its Grama Niladhari    division
+* Add geotag details to uploaded photos using the longitude and latitude
 * Upload up to three disaster photos
 * Store report details in a MySQL database
 * Store uploaded photos in an `uploads` folder
 * Store uploaded photo paths in the database
 * View all submitted reports in an admin panel
 * Display uploaded photos in the admin panel
+* Show the incident location on a Sri Lankan map using the saved longitude and latitude
 
 ## How the System Works
 
