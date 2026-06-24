@@ -48,7 +48,7 @@ $photo3=uploadPhoto("photo3",$photo_folder);
 
 //insert the form data into disaster_reports table
 $sql="insert into disaster_reports
-(name,tel,disaster,disaster,gn,photo1,photo2,photo3)
+(name,tel,disaster,district,gn,photo1,photo2,photo3)
 values
 ('$name','$tel','$disaster','$district','$gn','$photo1','$photo2','$photo3')";
 
