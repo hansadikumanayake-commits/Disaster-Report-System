@@ -32,8 +32,11 @@
             </select><br>
 
 
-            <label>GeoTag:<label>
-            <input type="text" name="geotag" placeholder="Example:Colombo,79.861244" required><br>
+            <label>District:<label>
+            <input type="text" name="district" required><br>
+
+            <label>Grama-Niladhari Division:</label>
+            <input type="text" name="gn" required><br>
 
             <!--file input to display the photo of the disaster-->
             <label>Upload photo 1:</label>
