@@ -22,7 +22,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
 
         //save otp in users table
 
-        $update_sql="UPDATE TABLE users SET otp='$otp', otp_expiry='$otp_expiry'
+        $update_sql="UPDATE users SET otp='$otp', otp_expiry='$otp_expiry'
                                             WHERE id='".$user["id"]."' ";
 
         mysqli_query($conn, $update_sql);
