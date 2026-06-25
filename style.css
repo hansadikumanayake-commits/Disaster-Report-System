@@ -188,3 +188,64 @@ button:hover {
         padding: 15px;
     }
 }
+/* OTP generated page styling */
+
+.otp-container {
+    width: 90%;
+    max-width: 450px;
+    margin: 80px auto;
+    padding: 30px;
+    background-color: #e6f7ff;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.otp-container h1 {
+    color: midnightblue;
+    margin-bottom: 20px;
+}
+
+.otp-message {
+    font-size: 18px;
+    color: #333;
+}
+
+.otp-box {
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    background-color: white;
+    color: midnightblue;
+    padding: 15px;
+    margin: 20px auto;
+    border-radius: 8px;
+    border: 2px solid skyblue;
+}
+
+.otp-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: midnightblue;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.otp-button:hover {
+    background-color: #0a2351;
+}
+
+/* Mobile responsive OTP page */
+@media screen and (max-width: 600px) {
+    .otp-container {
+        margin: 40px auto;
+        padding: 20px;
+    }
+
+    .otp-box {
+        font-size: 26px;
+        letter-spacing: 3px;
+    }
+}

@@ -28,7 +28,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
         mysqli_query($conn, $update_sql);
 
         //show otp on onscreen
-    echo "
+    ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,16 +44,14 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
 
         <p class='otp-message'>Your OTP is:</p>
 
-        <div class='otp-box'>$otp</div>
+        <div class='otp-box'><?php echo $otp; ?></div>
 
         <a href='otp_verify.php' class='otp-button'>Enter OTP</a>
     </div>
 
 </body>
 </html>
-
-    
-        ";
+        <?php
 
     }else{
         echo "Invalid username or password";
