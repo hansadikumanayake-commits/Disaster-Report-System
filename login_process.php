@@ -8,7 +8,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
 
     //check usernameand password from theuser table
 
-    $sql="SELECT * FROM users WHERE username='$username' AND password=$password";
+    $sql="SELECT * FROM users WHERE username='$username' AND  password='$password' ";
     $result=mysqli_query($conn,$sql);
 
     if(mysqli_num_rows($result)==1){
@@ -28,8 +28,32 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
         mysqli_query($conn, $update_sql);
 
         //show otp on onscreen
-       echo  "<h2>Your OTP: $otp</h2>";
-        echo "<a href='otp_verify.php'>Enter your OTP</a>";
+    echo "
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>OTP Generated</title>
+    <link rel='stylesheet' href='style.css'>
+</head>
+<body>
+
+    <div class='otp-container'>
+        <h1>OTP Generated</h1>
+
+        <p class='otp-message'>Your OTP is:</p>
+
+        <div class='otp-box'>$otp</div>
+
+        <a href='otp_verify.php' class='otp-button'>Enter OTP</a>
+    </div>
+
+</body>
+</html>
+
+    
+        ";
 
     }else{
         echo "Invalid username or password";
