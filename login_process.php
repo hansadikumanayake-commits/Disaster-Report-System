@@ -13,6 +13,12 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
 
     if(mysqli_num_rows($result)==1){
         $user=mysqli_fetch_assoc($result);
+
+        //generate otp of 6 digits
+        $otp=random_int(100000,999999);
+
+        //otp valid for 5minutes only
+        $otp_expiry=date("Y-m-d H:i:s",strtotime("+5 minutes"));
     }
 }
 ?>
