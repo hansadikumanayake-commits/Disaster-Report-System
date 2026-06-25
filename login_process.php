@@ -23,9 +23,17 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
         //save otp in users table
 
         $update_sql="UPDATE TABLE users SET otp='$otp', otp_expiry='$otp_expiry'
-                                            WHERE id='".users["id"]."' ";
+                                            WHERE id='".$user["id"]."' ";
 
         mysqli_query($conn, $update_sql);
+
+        //show otp on onscreen
+       echo  "<h2>Your OTP: $otp</h2>";
+        echo "<a href='otp_verify.php'>Enter your OTP</a>";
+
+    }else{
+        echo "Invalid username or password";
+        echo "<a href='login.php'>Try Again</a>";
     }
 }
 ?>
