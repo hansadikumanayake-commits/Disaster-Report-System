@@ -19,6 +19,13 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
 
         //otp valid for 5minutes only
         $otp_expiry=date("Y-m-d H:i:s",strtotime("+5 minutes"));
+
+        //save otp in users table
+
+        $update_sql="UPDATE TABLE users SET otp='$otp', otp_expiry='$otp_expiry'
+                                            WHERE id='".users["id"]."' ";
+
+        mysqli_query($conn, $update_sql);
     }
 }
 ?>
