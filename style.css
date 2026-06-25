@@ -208,7 +208,7 @@ button:hover {
 
 .otp-message {
     font-size: 18px;
-    color: #333;
+    color: grey;
 }
 
 .otp-box {
@@ -234,7 +234,7 @@ button:hover {
 }
 
 .otp-button:hover {
-    background-color: #0a2351;
+    background-color: cadetblue;
 }
 
 /* Mobile responsive OTP page */

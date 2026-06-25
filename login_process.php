@@ -57,9 +57,6 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
 <?php
 
     }else{
-        echo "Invalid username or password";
-        echo "<a href='login.php'>Try Again</a>";
-    }
 }else{
     header('Location:login.php');
 }
