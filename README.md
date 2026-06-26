@@ -49,7 +49,7 @@ In the admin panel, each disaster report can display the uploaded photos togethe
 
 ## Technologies Used
 
-This project uses HTML, CSS, PHP, MySQL, XAMPP, Git, and GitHub
+This project uses HTML, CSS, PHP, MySQL, XAMPP
 
 HTML is used to create the page structure, CSS is used for styling and desgin of the web pages
 
