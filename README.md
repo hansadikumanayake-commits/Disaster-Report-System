@@ -59,8 +59,6 @@ HTML is used to create the page structure, CSS is used for styling and desgin of
  
  XAMPP is used to run the project locally
 
-Git and GitHub are used to manage the project files and maintain version control
-
 ## Database Description
 
 The system uses a MySQL database named `disaster_report`
