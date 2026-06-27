@@ -23,9 +23,10 @@ if(!isset($_SESSION["user_id"])){
             <h1>OTP Verification</h1>
             <p clss="otp-message">Enter the OTP shown on the screen</p>
 
-    //When admin clicks Verify OTP, send the OTP to otp_process.php.
+    <!--When admin clicks Verify OTP, send the OTP to otp_process.php.-->
     <form action="otp_process.php" method="post">
         <input type="text" placeholder="Enter the otp here" name="otp" required>
+        <br><br>
         <button type="submit" class="otp-button">Verify OTP</button>
     </form>
         </div>
