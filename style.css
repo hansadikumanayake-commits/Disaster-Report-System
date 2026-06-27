@@ -291,3 +291,6 @@ button:hover {
     border-radius: 8px;
     font-weight: bold;
 }
+.otp-button:hover {
+    background-color: #0a2351;
+}
