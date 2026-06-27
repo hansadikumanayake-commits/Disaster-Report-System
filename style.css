@@ -255,7 +255,7 @@ button:hover {
     max-width: 450px;
     margin: 80px auto;
     padding: 30px;
-    background-color: #e6f7ff;
+    background-color: azure;
     border-radius: 12px;
     text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
@@ -267,7 +267,7 @@ button:hover {
 
 .otp-message {
     font-size: 18px;
-    color: #333;
+    color: grey;
 }
 
 .otp-box {
@@ -292,5 +292,5 @@ button:hover {
     font-weight: bold;
 }
 .otp-button:hover {
-    background-color: #0a2351;
+    background-color: midnightblue;
 }
