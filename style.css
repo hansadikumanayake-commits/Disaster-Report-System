@@ -260,3 +260,12 @@ button:hover {
     text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
+.otp-container h1 {
+    color: midnightblue;
+    margin-bottom: 20px;
+}
+
+.otp-message {
+    font-size: 18px;
+    color: #333;
+}
