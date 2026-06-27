@@ -16,10 +16,15 @@ if(!isset($_SESSION["user_id"])){
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <title>OTP Verification</title>
+        <link rel="stylesheet" href="style.css"> 
     </head>
     <body>
+        <div class="otp-container">
+            <h1>OTP Verification</h1>
+            <p clss="otp-message">Enter the OTP shown on the screen</p>
+        </div>
     <form action="login_process.php" method="post">
-
+        
     </form>
     </body>
 </html>
