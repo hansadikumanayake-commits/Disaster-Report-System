@@ -269,3 +269,25 @@ button:hover {
     font-size: 18px;
     color: #333;
 }
+
+.otp-box {
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    background-color: white;
+    color: midnightblue;
+    padding: 15px;
+    margin: 20px auto;
+    border-radius: 8px;
+    border: 2px solid skyblue;
+}
+
+.otp-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: midnightblue;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
