@@ -11,6 +11,7 @@ if (!isset($_SESSION["user_id"])) {
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OTP Verification Failed</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -28,22 +29,26 @@ if (!isset($_SESSION["user_id"])) {
                 The OTP you entered is incorrect or expired.
             </p>
 
+            <a href="otp_verify.php" class="otp-failed-secondary-btn">
+                Try Existing OTP Again
+            </a>
+
+            <div class="otp-failed-divider"></div>
+
             <p class="otp-failed-question">
                 Do you want to generate a new OTP?
             </p>
 
             <div class="otp-failed-actions">
+
                 <a href="resend_otp.php" class="otp-failed-primary-btn">
                     Generate New OTP
                 </a>
 
-                <a href="otp_verify.php" class="otp-failed-secondary-btn">
-                    Try Existing OTP Again
-                </a>
-
-                <a href="login.php" class="otp-failed-link">
+                <a href="login.php" class="otp-failed-login-btn">
                     Back to Login
                 </a>
+
             </div>
 
         </div>
