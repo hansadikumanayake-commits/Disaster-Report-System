@@ -376,13 +376,14 @@ button:hover {
 }
 
 .message-button:hover {
-    background-color: crimson;
+    background-color: rgb(111, 22, 6);
 }
 
 .back-link {
     color: #0a2351;
     text-decoration: none;
     font-size: 14px;
+    border-radius:10px;
 }
 
 .back-link:hover {
