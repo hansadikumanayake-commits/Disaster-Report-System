@@ -76,6 +76,14 @@ if(!isset($_SESSION["user_logged_in"])){
             <label>Grama-Niladhari Division:</label>
             <input type="text" name="gn" required><br>
 
+            <label>Location:</label>
+            <button type="button" onclick="getLocation()" class="location-btn">
+                Get Current Location</button>
+
+            <p id="location-status" class="location-status">Location not selected yet </p>
+            <input type="hidden" name="latitude" id="latitude">
+            <input type="hidde" name="longitude" id="longitude">
+
             <!--file input to display the photo of the disaster-->
             <label>Upload photo 1:</label>
             <input type="file" name="photo1" accept="image/*" capture="environment" required><br>
