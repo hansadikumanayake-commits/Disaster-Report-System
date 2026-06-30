@@ -26,10 +26,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if ($entered_otp == $user['otp'] && strtotime($user['otp_expiry']) > time()) {
 
-            $_SESSION['user_logged_in'] = true;
-
-            header("Location: index.php");
+           //if the logged-in user is admin 
+           if($user['role']=='admin'){
+            $_SESSION['admin_logged_in']=true;
+            header("Location:admin.php");
             exit();
+           }
+           //if the logged in user is the normal user 
+           if($user['role']=='user'){
+            $_SESSION['user_logged_in']=true;
+            header("Location:index.php");
+            exit();
+           }
 
         } else {
 
