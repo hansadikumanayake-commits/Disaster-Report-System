@@ -2,36 +2,36 @@
 session_start();
 include 'db.php';
 
-if($_SERVER['REQUEST_METHOD']=="POST"){
-    $username=$_POST['username'];
-    $password=$_POST['password'];
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
-    //check usernameand password from theuser table
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-    $sql="SELECT * FROM users WHERE username='$username' AND  password='$password' ";
-    $result=mysqli_query($conn,$sql);
+    // check username and password from users table
+    $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+    $result = mysqli_query($conn, $sql);
 
-    if(mysqli_num_rows($result)==1){
-        $user=mysqli_fetch_assoc($result);
+    if (mysqli_num_rows($result) == 1) {
 
-        //generate otp of 6 digits
-        $otp=random_int(100000,999999);
+        $user = mysqli_fetch_assoc($result);
 
-        //otp valid for 5minutes only
-        $otp_expiry=date("Y-m-d H:i:s",strtotime("+5 minutes"));
+        // generate OTP of 6 digits
+        $otp = random_int(100000, 999999);
 
-        //save otp in users table
+        // OTP valid for 5 minutes only
+        $otp_expiry = date("Y-m-d H:i:s", strtotime("+5 minutes"));
 
-        $update_sql="UPDATE users SET otp='$otp', otp_expiry='$otp_expiry'
-                                            WHERE id='".$user["id"]."' ";
+        // save OTP in users table
+        $update_sql = "UPDATE users 
+                       SET otp='$otp', otp_expiry='$otp_expiry'
+                       WHERE id='".$user["id"]."'";
 
         mysqli_query($conn, $update_sql);
 
-        //save user id temporarily
-        $_SESSION["user_id"]=$user["id"];
+        // save user id temporarily
+        $_SESSION["user_id"] = $user["id"];
+?>
 
-        //show otp on onscreen
-   ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -54,30 +54,37 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
 
 </body>
 </html>
+
 <?php
+    } else {
+?>
 
-    }else{?>
-    <!DOCTYPE HTML>
-    <html>
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width,initial-scale=1.0">
-            <title>Login Failed</title>
-            <link rel="stylesheet" href="style.css">
-        </head>
-        <body>
-            <div class="message-container error-box">
-                <h1>Login Failed</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Failed</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-                <p class="message-text">Invalid username or password</p>
-                <a href="login.php" class="message-button">Try Again</a>
-            </div>
+    <div class="message-container error-box">
+        <h1>Login Failed</h1>
 
-        </body>
-    </html>
-        
-    <?php }
-}else{
-    header('Location:login.php');
+        <p class="message-text">Invalid username or password</p>
+
+        <a href="login.php" class="message-button">Try Again</a>
+    </div>
+
+</body>
+</html>
+
+<?php
+    }
+
+} else {
+    header("Location: login.php");
+    exit();
 }
 ?>
