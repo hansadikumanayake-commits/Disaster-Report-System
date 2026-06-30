@@ -366,8 +366,8 @@ button:hover {
 
 .message-button {
     display: inline-block;
-    padding: 10px 25px;
-    background-color: #0a2351;
+    padding: 10px 75px;
+    background-color:midnightblue;
     color: white;
     text-decoration: none;
     border-radius: 6px;
@@ -376,16 +376,21 @@ button:hover {
 }
 
 .message-button:hover {
-    background-color: rgb(111, 22, 6);
+    background-color: rgb(185, 185, 186);
+    color:black;
 }
 
 .back-link {
-    color: #0a2351;
+    color: white;
     text-decoration: none;
     font-size: 14px;
-    border-radius:10px;
+    border-radius:5px;
+    background-color:#242527;
+    padding:8px 12px;
+
+
 }
 
 .back-link:hover {
-    text-decoration: underline;
+    background-color:rgb(197, 121, 15);
 }
