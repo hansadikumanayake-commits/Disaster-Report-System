@@ -1,53 +1,78 @@
 /* Makes width and padding calculate properly */
-*{
-    box-sizing:border-box;
+* {
+    box-sizing: border-box;
 }
 
 body {
-    /* Prevent page from overflowing on small screens */
-     margin: 0;
+    margin: 0;
     padding: 20px;
     font-family: Arial, sans-serif;
     background-color: azure;
 }
 
+/* Common heading */
 h1 {
     text-align: center;
     color: midnightblue;
     margin-top: 35px;
+    margin-bottom: 35px;
+    font-size: 34px;
 }
 
+/* ============================= */
+/* Disaster Report Form Styling */
+/* ============================= */
+
 form {
-    background-color:lightcyan;
-    margin: 30px auto;
-    padding: 25px;
-    border-radius: 20px;
-    color:black;
-    border:2px solid black;
-    /* Make form fit different screen sizes */
+    background-color: #ffffff;
+    padding: 35px;
+    border-radius: 18px;
+    color: black;
+    border: 1px solid #cce7ef;
     width: 90%;
-    max-width: 600px;
-    margin: 0 auto;
+    max-width: 700px;
+    margin: 30px auto;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
 label {
     font-weight: bold;
     display: block;
-    margin-top: 12px;
+    margin-top: 18px;
+    margin-bottom: 6px;
+    color: #0a2351;
+    font-size: 15px;
 }
 
-input, select {
+input,
+select,
+textarea {
     width: 100%;
-    padding: 7px;
-    margin-top: 6px;
-    box-sizing: border-box;
-    /* Make form elements fit inside the form */
-    max-width:100%;
+    padding: 12px 14px;
+    margin-top: 4px;
+    max-width: 100%;
+    border: 1px solid #b8cdd6;
+    border-radius: 8px;
+    background-color: #f8fcff;
+    font-size: 15px;
+    outline: none;
 }
 
+/* Input focus effect */
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: midnightblue;
+    background-color: white;
+    box-shadow: 0 0 6px rgba(25, 25, 112, 0.25);
+}
+
+/* File upload fields */
 input[type="file"] {
-    border: 1px solid black;
-    background-color:skyblue;
+    border: 1px dashed midnightblue;
+    background-color: #eef9ff;
+    padding: 12px;
+    cursor: pointer;
 }
 
 /* Make uploaded photos responsive */
@@ -56,87 +81,112 @@ img {
     height: auto;
 }
 
+/* Submit button */
 button {
     width: 100%;
-    padding: 10px;
-    background-color: silver;
-    color:black;
+    padding: 13px;
+    margin-top: 25px;
+    background-color: midnightblue;
+    color: white;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 9px;
+    font-size: 17px;
+    font-weight: bold;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 button:hover {
-    background-color:midnightblue;
-    color:whitesmoke;
+    background-color: cornflowerblue;
+    color: white;
 }
 
-.report-list{
-    width:80%;
-    margin:30px auto;
+/* ============================= */
+/* Admin Panel Styling */
+/* ============================= */
+
+.report-list {
+    width: 85%;
+    max-width: 1200px;
+    margin: 30px auto;
 }
 
-.report-card{
-    background-color:white;
-    padding:20px;
-    margin-bottom:20px;
-    border-left:5px solid midnightblue;
-    border-radius:8px;
-    box-shadow:0 0 8px rgba(0,0,0,0.1);
-    width: 90%;
-    max-width: 700px;
-    margin: 20px auto;
+.report-card {
+    background-color: white;
+    padding: 28px 35px;
+    margin-bottom: 30px;
+    border-left: 6px solid midnightblue;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
 }
 
-.report-card h3{
-    background-color:aliceblue;
-    margin-top:0;
+.report-card h3 {
+    background-color: aliceblue;
+    color: midnightblue;
+    padding: 12px 15px;
+    margin-top: 0;
+    margin-bottom: 22px;
+    border-radius: 6px;
+    font-size: 22px;
 }
 
-.report-card p{
-    font-size:16px;
-    margin:8px 0;
+.report-card p {
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 8px 0;
 }
 
-.photo-gallery{
-    display:flex;
-    gap:15px;
-    flex-wrap:wrap;
-    margin-top:15px;
+.report-card h4 {
+    margin-top: 28px;
+    margin-bottom: 18px;
+    font-size: 20px;
+    color: midnightblue;
 }
 
-.photo-gallery img{
-    width:180px;
-    height:130px;
-    object-fit:cover;
-    border:2px solid midnightblue;
-    border-radius :6px;
+.photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    margin-top: 15px;
+}
+
+.photo-gallery img {
+    width: 260px;
+    height: 170px;
+    object-fit: cover;
+    border: 2px solid midnightblue;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.16);
+}
+
+.back-btn-container {
+    text-align: center;
+    margin-top: 35px;
+    margin-bottom: 60px;
 }
 
 .back-btn {
     display: inline-block;
-    background-color: orange;
+    background-color: midnightblue;
     color: white;
-    padding: 12px 20px;
+    padding: 12px 28px;
     text-decoration: none;
     border-radius: 8px;
     font-weight: bold;
-    margin-top: 20px;
+    font-size: 16px;
 }
 
 .back-btn:hover {
-    background-color:saddlebrown;
+    background-color: crimson;
 }
 
-.back-btn-container{
-    text-align:center;
-    margin-top:25px;
-    margin-bottom:60px;
-}
+/* ============================= */
+/* Submit Success Message */
+/* ============================= */
 
 .submit-message {
-    width: 450px;
+    width: 90%;
+    max-width: 450px;
     margin: 80px auto;
     padding: 30px;
     text-align: center;
@@ -159,96 +209,9 @@ button:hover {
     background-color: cornflowerblue;
 }
 
-/* Mobile screen */
-@media screen and (max-width: 600px) {
-    body {
-        padding: 10px;
-    }
-
-    h1 {
-        font-size: 24px;
-        text-align: center;
-    }
-
-    form {
-        width: 100%;
-        padding: 15px;
-    }
-
-    input,
-    select,
-    textarea,
-    button {
-        width: 100%;
-        font-size: 16px;
-    }
-
-    .report-card {
-        width: 100%;
-        padding: 15px;
-    }
-}
-/* OTP generated page styling */
-
-.otp-container {
-    width: 90%;
-    max-width: 450px;
-    margin: 80px auto;
-    padding: 30px;
-    background-color: #e6f7ff;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-}
-
-.otp-container h1 {
-    color: midnightblue;
-    margin-bottom: 20px;
-}
-
-.otp-message {
-    font-size: 18px;
-    color: grey;
-}
-
-.otp-box {
-    font-size: 32px;
-    font-weight: bold;
-    letter-spacing: 5px;
-    background-color: white;
-    color: midnightblue;
-    padding: 15px;
-    margin: 20px auto;
-    border-radius: 8px;
-    border: 2px solid skyblue;
-}
-
-.otp-button {
-    display: inline-block;
-    padding: 12px 25px;
-    background-color: midnightblue;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-}
-
-.otp-button:hover {
-    background-color: cadetblue;
-}
-
-/* Mobile responsive OTP page */
-@media screen and (max-width: 600px) {
-    .otp-container {
-        margin: 40px auto;
-        padding: 20px;
-    }
-
-    .otp-box {
-        font-size: 26px;
-        letter-spacing: 3px;
-    }
-}
+/* ============================= */
+/* OTP Generated Page Styling */
+/* ============================= */
 
 .otp-container {
     width: 90%;
@@ -260,6 +223,7 @@ button:hover {
     text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
+
 .otp-container h1 {
     color: midnightblue;
     margin-bottom: 20px;
@@ -291,54 +255,18 @@ button:hover {
     border-radius: 10px;
     font-weight: bold;
 }
+
 .otp-button:hover {
-    background-color: midnightblue;
+    background-color: cadetblue;
 }
+
+/* ============================= */
+/* Login Failed / General Message */
+/* ============================= */
 
 .message-container {
-    width: 400px;
-    margin: 100px auto;
-    padding: 30px;
-    background-color: white;
-    text-align: center;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    font-family: Arial, sans-serif;
-}
-
-.message-container h1 {
-    color: #0a2351;
-    margin-bottom: 20px;
-    font-size: 28px;
-}
-
-.error-box {
-    border-top: 6px solid crimson;
-}
-
-.message-text {
-    color: #333;
-    font-size: 16px;
-    margin-bottom: 25px;
-}
-
-.message-button {
-    display: inline-block;
-    padding: 10px 25px;
-    background-color: #0a2351;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    font-size: 15px;
-    transition: 0.3s;
-}
-
-.message-button:hover {
-    background-color: crimson;
-}
-
-.message-container {
-    width: 400px;
+    width: 90%;
+    max-width: 400px;
     margin: 100px auto;
     padding: 30px;
     background-color: white;
@@ -367,7 +295,7 @@ button:hover {
 .message-button {
     display: inline-block;
     padding: 10px 75px;
-    background-color:midnightblue;
+    background-color: midnightblue;
     color: white;
     text-decoration: none;
     border-radius: 6px;
@@ -377,25 +305,27 @@ button:hover {
 
 .message-button:hover {
     background-color: rgb(185, 185, 186);
-    color:black;
+    color: black;
 }
 
 .back-link {
+    display: inline-block;
     color: white;
     text-decoration: none;
     font-size: 14px;
-    border-radius:5px;
-    background-color:#242527;
-    padding:8px 12px;
-
-
+    border-radius: 5px;
+    background-color: #242527;
+    padding: 8px 12px;
 }
 
 .back-link:hover {
-    background-color:rgb(197, 121, 15);
+    background-color: rgb(197, 121, 15);
 }
 
+/* ============================= */
 /* OTP Failed Page */
+/* ============================= */
+
 .otp-failed-wrapper {
     min-height: 100vh;
     background-color: #eafafa;
@@ -511,8 +441,75 @@ button:hover {
     color: white;
 }
 
+/* ============================= */
 /* Mobile Responsive */
-@media (max-width: 500px) {
+/* ============================= */
+
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 26px;
+        text-align: center;
+    }
+
+    form {
+        width: 100%;
+        padding: 22px 18px;
+        border-radius: 14px;
+    }
+
+    input,
+    select,
+    textarea,
+    button {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .report-list {
+        width: 95%;
+    }
+
+    .report-card {
+        width: 100%;
+        padding: 22px 18px;
+    }
+
+    .report-card h3 {
+        font-size: 20px;
+    }
+
+    .report-card p {
+        font-size: 16px;
+    }
+
+    .photo-gallery {
+        justify-content: center;
+    }
+
+    .photo-gallery img {
+        width: 100%;
+        max-width: 320px;
+        height: 190px;
+    }
+
+    .otp-container {
+        margin: 40px auto;
+        padding: 20px;
+    }
+
+    .otp-box {
+        font-size: 26px;
+        letter-spacing: 3px;
+    }
+
+    .message-button {
+        padding: 10px 35px;
+    }
+
     .otp-failed-card {
         width: 100%;
         padding: 30px 20px;
