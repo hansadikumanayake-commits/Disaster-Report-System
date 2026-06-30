@@ -1,13 +1,18 @@
-<!--admin panel created in here-->
 <?php
+session_start();
 
-//include the database connection file
+// Only admin can access this page
+if (!isset($_SESSION["admin_logged_in"])) {
+    header("Location: login.php");
+    exit();
+}
+
+// include the database connection file
 include 'db.php';
 
-//getting all the  disaster reports from database
-$sql="select * from disaster_reports order by created_at desc";
-$result=mysqli_query($conn,$sql);
-
+// getting all the disaster reports from database
+$sql = "SELECT * FROM disaster_reports ORDER BY created_at DESC";
+$result = mysqli_query($conn, $sql);
 ?>
 
 <!DOCTYPE HTML>
