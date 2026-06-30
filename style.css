@@ -294,3 +294,45 @@ button:hover {
 .otp-button:hover {
     background-color: midnightblue;
 }
+
+.message-container {
+    width: 400px;
+    margin: 100px auto;
+    padding: 30px;
+    background-color: white;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+}
+
+.message-container h1 {
+    color: #0a2351;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.error-box {
+    border-top: 6px solid crimson;
+}
+
+.message-text {
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+.message-button {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #0a2351;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.message-button:hover {
+    background-color: crimson;
+}
