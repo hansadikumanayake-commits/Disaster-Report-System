@@ -29,8 +29,10 @@ $result = mysqli_query($conn, $sql);
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1>Admin Panel - Disaster Reports</h1>
 
+<a href="logout.php" class="logout-top-btn">Logout</a>    
+
+        <h1>Admin Panel - Disaster Reports</h1>
     <div class="report-list">
         <?php
         // get row from database as result by accessing values using column names as array 

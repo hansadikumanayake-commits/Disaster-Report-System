@@ -17,6 +17,8 @@ if(!isset($_SESSION["user_logged_in"])){
             <link rel="stylesheet" href="style.css">
         </head>
         <body>
+            <a href="logout.php" class="logout-top-btn">Logout</a>    
+
             <!--Send the form data in a way that can include files/photos and the form data to submit.php-->
             <form action="submit.php" method="POST" enctype="multipart/form-data">
             <h1>Disaster-Report-System</h1>
