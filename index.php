@@ -1,3 +1,12 @@
+<?php
+//to make sure only the logged in users can enter into the form
+session_start();
+if(!isset($_SESSION["user_logged_in"])){
+    header("Location:login.php");
+    exit();
+}
+?>
+
 <!DOCTYPE HTML>
     <html lang="en">
         <head>

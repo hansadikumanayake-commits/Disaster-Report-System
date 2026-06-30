@@ -26,9 +26,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if ($entered_otp == $user['otp'] && strtotime($user['otp_expiry']) > time()) {
 
-            $_SESSION['admin_logged_in'] = true;
+            $_SESSION['user_logged_in'] = true;
 
-            header("Location: admin.php");
+            header("Location: index.php");
             exit();
 
         } else {

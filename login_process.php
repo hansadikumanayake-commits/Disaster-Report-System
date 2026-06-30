@@ -69,7 +69,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
             <div class="message-container error-box">
                 <h1>Login Failed</h1>
 
-                <p class=message-text>Invalid username or password</p>
+                <p class="message-text">Invalid username or password</p>
                 <a href="login.php" class="message-button">Try Again</a>
             </div>
 
