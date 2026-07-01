@@ -100,27 +100,29 @@ if(!isset($_SESSION["user_logged_in"])){
 
             </form>
 
-            <script>
-                function getLocation(){
-                    let status=document.getElementById("location-status");
+<script>
+    function getLocation() {
+        let status = document.getElementById("location-status");
 
-                    if(navigator.geolocation){
-                        status.innerHTML="Getting location...";
-                        navigator.geolocation.getCurrentPosition(
-                            function(position){
-                                document.getElementById("latitude").value=postion.coords.latitude;
-                                document.getElementById("longitude").value=position.coords.latitude;
-                                status.innerHTML="Location captured successfully";
-                            },
-                            function(error){
-                                status.innerHTML="Unable to get location .Please allow location access";
-                            }
-                        );
-                    }else{
-                        status.innerHTML="Geolocation is not supported by this browser";
-                    }
+        if (navigator.geolocation) {
+            status.innerHTML = "Getting location...";
+
+            navigator.geolocation.getCurrentPosition(
+                function(position) {
+                    document.getElementById("latitude").value = position.coords.latitude;
+                    document.getElementById("longitude").value = position.coords.longitude;
+
+                    status.innerHTML = "Location captured successfully";
+                },
+                function(error) {
+                    status.innerHTML = "Unable to get location. Please allow location access.";
                 }
-            </script>
+            );
+        } else {
+            status.innerHTML = "Geolocation is not supported by this browser.";
+        }
+    }
+</script>
 
 
 

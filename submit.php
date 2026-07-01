@@ -16,6 +16,10 @@ $disaster=$_POST["disaster"];
 $district=$_POST["district"];
 $gn=$_POST["gn"];
 
+//latitude and longitudes obtained
+$latitude=$_POST['latitude'];
+$longitude=$_POST['longitude'];
+
 //save the uploaded photos inside the upload folder
 $photo_folder="uploads/";
 
