@@ -80,9 +80,13 @@ if(!isset($_SESSION["user_logged_in"])){
             <button type="button" onclick="getLocation()" class="location-btn">
                 Get Current Location</button>
 
-            <p id="location-status" class="location-status">Location not selected yet </p>
-            <input type="hidden" name="latitude" id="latitude">
-            <input type="hidde" name="longitude" id="longitude">
+            <p id="location-status" class="location-status">Location not selected yet</p>
+
+            <label>Latitude:</label>
+            <input type="text" name="latitude" id="latitude" readonly required>
+
+            <label>Longitude:</label>
+            <input type="text" name="longitude" id="longitude" readonly required>
 
             <!--file input to display the photo of the disaster-->
             <label>Upload photo 1:</label>
@@ -109,8 +113,11 @@ if(!isset($_SESSION["user_logged_in"])){
 
             navigator.geolocation.getCurrentPosition(
                 function(position) {
-                    document.getElementById("latitude").value = position.coords.latitude;
-                    document.getElementById("longitude").value = position.coords.longitude;
+                    let latitude = position.coords.latitude;
+                    let longitude = position.coords.longitude;
+
+                    document.getElementById("latitude").value = latitude;
+                    document.getElementById("longitude").value = longitude;
 
                     status.innerHTML = "Location captured successfully";
                 },

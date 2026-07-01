@@ -97,11 +97,13 @@ $result = mysqli_query($conn, $sql);
                 <h4>Incident Location Map</h4>
                 <div class="map-box">
                     <iframe         
-            src="https://www.openstreetmap.org/export/embed.html?bbox=<?php echo $row['longitude'] - 0.01; ?>%2C<?php echo $row['latitude'] - 0.01; ?>%2C<?php echo $row['longitude'] + 0.01; ?>%2C<?php echo $row['latitude'] + 0.01; ?>&layer=mapnik&marker=<?php echo $row['latitude']; ?>%2C<?php echo $row['longitude']; ?>">
+            src="https://maps.google.com/maps?q=<?php echo $row['latitude']; ?>,<?php echo $row['longitude']; ?>&z=15&output=embed">
                 </iframe>
-</div>
-            <?php
-            }?>          
+        </div>
+               <?php
+            }else{
+                echo "<p>Location not available</p>";}
+               ?>      
 
             <!--display the submitted date -->
             <p><strong>Submitted Date:</strong>

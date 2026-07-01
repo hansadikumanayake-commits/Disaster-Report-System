@@ -599,3 +599,9 @@ button:hover {
     height: 100%;
     border: none;
 }
+input[readonly] {
+    background-color: #eef9ff;
+    color: #0a2351;
+    font-weight: bold;
+    cursor: not-allowed;
+}
