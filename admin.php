@@ -78,6 +78,31 @@ $result = mysqli_query($conn, $sql);
                 echo $row['gn'];
             ?></p>
 
+            <!--display latitude-->
+            <p><strong>Latitude:</strong>
+            <?php echo $row['latitude'];
+            ?>
+        </p>
+
+            <!--display longitude-->
+            <p>
+                <strong>Longitude:</strong>
+                <?php echo $row['longitude'];?>
+            </p>
+
+            <!--display the map if longitude and latitude exists-->
+            <?php
+            if(!empty($row['latitude'])&& !empty($row['longitude'])){
+                ?>
+                <h4>Incident Location Map</h4>
+                <div class="map-box">
+                    <iframe         
+            src="https://www.openstreetmap.org/export/embed.html?bbox=<?php echo $row['longitude'] - 0.01; ?>%2C<?php echo $row['latitude'] - 0.01; ?>%2C<?php echo $row['longitude'] + 0.01; ?>%2C<?php echo $row['latitude'] + 0.01; ?>&layer=mapnik&marker=<?php echo $row['latitude']; ?>%2C<?php echo $row['longitude']; ?>">
+                </iframe>
+</div>
+            <?php
+            }?>          
+
             <!--display the submitted date -->
             <p><strong>Submitted Date:</strong>
             <?php
