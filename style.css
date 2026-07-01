@@ -568,3 +568,16 @@ button:hover {
     font-weight: bold;
     cursor: pointer;
 }
+.location-btn:hover {
+    background-color: cornflowerblue;
+}
+
+.location-status {
+    background-color: #eef9ff;
+    color: #0a2351;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+    font-size: 14px;
+    border: 1px solid #b8cdd6;
+}
