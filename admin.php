@@ -94,20 +94,44 @@ $result = mysqli_query($conn, $sql);
                 <?php echo $row['longitude'];?>
             </p>
 
-            <!--display the map if longitude and latitude exists-->
+            <!--displaty the map if longitude and latitude values are available-->
             <?php
             if(!empty($row['latitude'])&& !empty($row['longitude'])){
-                ?>
-                <h4>Incident Location Map</h4>
-                <div class="map-box">
-                    <iframe         
-            src="https://maps.google.com/maps?q=<?php echo $row['latitude']; ?>,<?php echo $row['longitude']; ?>&z=15&output=embed">
-                </iframe>
-        </div>
-               <?php
+                
+                //convert db latitude and longitude into numbers
+                $lat=(float)$row['latitude'];
+                $lng=(float)$row['longitude'];
+
+                //create a unique ma id for each report
+                $mapId="map".$row['id'];
+            ?>
+            <h4>Incident Location Map</h4>
+            <!--openstreetmap will be displayed here-->
+            <div id="<?php echo $mapId;?>" class="map-box"></div>
+
+            <script>
+                //create the map using leaflet
+                 var incidentMap<?php echo $row['id']; ?> = L.map('<?php echo $mapId; ?>').setView(
+                    [<?php echo $lat; ?>, <?php echo $lng; ?>],
+                    15
+                );
+
+                        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(incidentMap<?php echo $row['id']; ?>);
+
+        // Add marker to the incident location
+        L.marker([<?php echo $lat; ?>, <?php echo $lng; ?>])
+            .addTo(incidentMap<?php echo $row['id']; ?>)
+            .bindPopup("Incident Location");
+            </script>
+
             }else{
-                echo "<p>Location not available</p>";}
-               ?>      
+                echo "<p>Location not available</p>";
+            }
+            ?>
+      
 
             <!--display the submitted date -->
             <p><strong>Submitted Date:</strong>
