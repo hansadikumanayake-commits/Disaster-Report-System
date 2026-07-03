@@ -112,62 +112,72 @@ if(!isset($_SESSION["user_logged_in"])){
 
             </form>
 
-<script>
-    // Create OpenStreetMap map and show Sri Lanka by default
+            <script>
+    // Create the OpenStreetMap map inside the div called incidentMap
     var map = L.map('incidentMap').setView([7.8731, 80.7718], 7);
 
-    // Add OpenStreetMap layer to the map
+    // Load the OpenStreetMap map design
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
-    // This marker variable will store the selected location marker
+    // This will store the marker on the map
     var marker;
 
-    // When user clicks on the map, get latitude and longitude
+    // When user clicks on the map
     map.on('click', function(e) {
         var latitude = e.latlng.lat;
         var longitude = e.latlng.lng;
 
+        // Fill latitude and longitude input boxes
         document.getElementById("latitude").value = latitude.toFixed(6);
         document.getElementById("longitude").value = longitude.toFixed(6);
 
+        // Show status message
         document.getElementById("location-status").innerHTML = "Location selected from map";
 
+        // If marker already exists, move it
         if (marker) {
             marker.setLatLng(e.latlng);
-        } else {
+        } 
+        // If marker does not exist, create it
+        else {
             marker = L.marker(e.latlng).addTo(map);
         }
 
         marker.bindPopup("Selected Incident Location").openPopup();
     });
 
-    // This function gets the user's current location using browser GPS
+    // This function runs when user clicks Get Current Location button
     function getLocation() {
         let status = document.getElementById("location-status");
 
         if (navigator.geolocation) {
-            status.innerHTML = "Getting location...";
+            status.innerHTML = "Getting current location...";
 
             navigator.geolocation.getCurrentPosition(
                 function(position) {
                     let latitude = position.coords.latitude;
                     let longitude = position.coords.longitude;
 
+                    // Fill latitude and longitude input boxes
                     document.getElementById("latitude").value = latitude.toFixed(6);
                     document.getElementById("longitude").value = longitude.toFixed(6);
 
                     status.innerHTML = "Current location captured successfully";
 
-                    var currentLocation = [latitude, longitude];
+                    let currentLocation = [latitude, longitude];
 
+                    // Move map to current location
                     map.setView(currentLocation, 15);
 
+                    // If marker already exists, move it
                     if (marker) {
                         marker.setLatLng(currentLocation);
-                    } else {
+                    } 
+                    // If marker does not exist, create it
+                    else {
                         marker = L.marker(currentLocation).addTo(map);
                     }
 
@@ -182,7 +192,7 @@ if(!isset($_SESSION["user_logged_in"])){
         }
     }
 
-    // Stop form from submitting if location is not selected
+    // Stop form submitting if latitude and longitude are empty
     document.getElementById("reportForm").addEventListener("submit", function(e) {
         let latitude = document.getElementById("latitude").value;
         let longitude = document.getElementById("longitude").value;
