@@ -127,9 +127,9 @@ $result = mysqli_query($conn, $sql);
             .bindPopup("Incident Location");
             </script>
 
-            }else{
+            <?php }else{ ?>
                 echo "<p>Location not available</p>";
-            }
+            <?php }
             ?>
       
 
