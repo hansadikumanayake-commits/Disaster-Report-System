@@ -605,3 +605,9 @@ input[readonly] {
     font-weight: bold;
     cursor: not-allowed;
 }
+.map-box {
+    width: 100%;
+    height: 250px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
