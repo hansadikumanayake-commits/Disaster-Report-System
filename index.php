@@ -79,7 +79,7 @@ if(!isset($_SESSION["user_logged_in"])){
             <label>Grama-Niladhari Division:</label>
             <input type="text" name="gn" required><br>
 
-            <h3>Select Incident LOcation on Map</h3>
+            <h3>Select Incident Location on Map</h3>
             <div id="incidentMap" class="form-map"></div>
 
 
@@ -91,10 +91,10 @@ if(!isset($_SESSION["user_logged_in"])){
             <p id="location-status" class="location-status">Location not selected yet</p>
 
             <label>Latitude:</label>
-            <input type="text" name="latitude" id="latitude" readonly required>
+            <input type="text" name="latitude" id="latitude"  required>
 
             <label>Longitude:</label>
-            <input type="text" name="longitude" id="longitude" readonly required>
+            <input type="text" name="longitude" id="longitude"  required>
 
             <!--file input to display the photo of the disaster-->
             <label>Upload photo 1:</label>
