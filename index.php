@@ -193,15 +193,32 @@ if(!isset($_SESSION["user_logged_in"])){
     }
 
     // Stop form submitting if latitude and longitude are empty
-    document.getElementById("reportForm").addEventListener("submit", function(e) {
-        let latitude = document.getElementById("latitude").value;
-        let longitude = document.getElementById("longitude").value;
+   document.getElementById("reportForm").addEventListener("submit", function(e) {
+    let latitude = document.getElementById("latitude").value;
+    let longitude = document.getElementById("longitude").value;
 
-        if (latitude === "" || longitude === "") {
-            e.preventDefault();
-            alert("Please select the incident location on the map or click Get Current Location.");
-        }
-    });
+    if (latitude === "" || longitude === "") {
+        e.preventDefault();
+        alert("Please select the location on the map, use current location, or manually enter latitude and longitude.");
+        return;
+    }
+
+    latitude = parseFloat(latitude);
+    longitude = parseFloat(longitude);
+
+    if (latitude < -90 || latitude > 90) {
+        e.preventDefault();
+        alert("Latitude must be between -90 and 90.");
+        return;
+    }
+
+    if (longitude < -180 || longitude > 180) {
+        e.preventDefault();
+        alert("Longitude must be between -180 and 180.");
+        return;
+    }
+});
+    
 </script>
 
 
