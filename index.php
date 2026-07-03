@@ -23,7 +23,7 @@ if(!isset($_SESSION["user_logged_in"])){
             <a href="logout.php" class="logout-top-btn">Logout</a>    
 
             <!--Send the form data in a way that can include files/photos and the form data to submit.php-->
-            <form action="submit.php" method="POST" enctype="multipart/form-data">
+            <form action="submit.php" method="POST" enctype="multipart/form-data" id="reportForm">
             <h1>Disaster-Report-System</h1>
             
             <!--information boxes needed-->
@@ -79,6 +79,11 @@ if(!isset($_SESSION["user_logged_in"])){
             <label>Grama-Niladhari Division:</label>
             <input type="text" name="gn" required><br>
 
+            <h3>Select Incident LOcation on Map</h3>
+            <div id="incidentMap" class="form-map"></div>
+
+
+
             <label>Location:</label>
             <button type="button" onclick="getLocation()" class="location-btn">
                 Get Current Location</button>
@@ -108,6 +113,38 @@ if(!isset($_SESSION["user_logged_in"])){
             </form>
 
 <script>
+    // Create OpenStreetMap map and show Sri Lanka by default
+    var map = L.map('incidentMap').setView([7.8731, 80.7718], 7);
+
+    // Add OpenStreetMap layer to the map
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // This marker variable will store the selected location marker
+    var marker;
+
+    // When user clicks on the map, get latitude and longitude
+    map.on('click', function(e) {
+        var latitude = e.latlng.lat;
+        var longitude = e.latlng.lng;
+
+        document.getElementById("latitude").value = latitude.toFixed(6);
+        document.getElementById("longitude").value = longitude.toFixed(6);
+
+        document.getElementById("location-status").innerHTML = "Location selected from map";
+
+        if (marker) {
+            marker.setLatLng(e.latlng);
+        } else {
+            marker = L.marker(e.latlng).addTo(map);
+        }
+
+        marker.bindPopup("Selected Incident Location").openPopup();
+    });
+
+    // This function gets the user's current location using browser GPS
     function getLocation() {
         let status = document.getElementById("location-status");
 
@@ -119,10 +156,22 @@ if(!isset($_SESSION["user_logged_in"])){
                     let latitude = position.coords.latitude;
                     let longitude = position.coords.longitude;
 
-                    document.getElementById("latitude").value = latitude;
-                    document.getElementById("longitude").value = longitude;
+                    document.getElementById("latitude").value = latitude.toFixed(6);
+                    document.getElementById("longitude").value = longitude.toFixed(6);
 
-                    status.innerHTML = "Location captured successfully";
+                    status.innerHTML = "Current location captured successfully";
+
+                    var currentLocation = [latitude, longitude];
+
+                    map.setView(currentLocation, 15);
+
+                    if (marker) {
+                        marker.setLatLng(currentLocation);
+                    } else {
+                        marker = L.marker(currentLocation).addTo(map);
+                    }
+
+                    marker.bindPopup("Current Location").openPopup();
                 },
                 function(error) {
                     status.innerHTML = "Unable to get location. Please allow location access.";
@@ -132,6 +181,17 @@ if(!isset($_SESSION["user_logged_in"])){
             status.innerHTML = "Geolocation is not supported by this browser.";
         }
     }
+
+    // Stop form from submitting if location is not selected
+    document.getElementById("reportForm").addEventListener("submit", function(e) {
+        let latitude = document.getElementById("latitude").value;
+        let longitude = document.getElementById("longitude").value;
+
+        if (latitude === "" || longitude === "") {
+            e.preventDefault();
+            alert("Please select the incident location on the map or click Get Current Location.");
+        }
+    });
 </script>
 
 
