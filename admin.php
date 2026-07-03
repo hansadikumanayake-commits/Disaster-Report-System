@@ -27,6 +27,10 @@ $result = mysqli_query($conn, $sql);
 
         <!--link external css file for styling-->
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        
     </head>
     <body>
 
