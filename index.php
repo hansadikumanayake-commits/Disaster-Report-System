@@ -15,6 +15,9 @@ if(!isset($_SESSION["user_logged_in"])){
             <title>Disaster-Report-System</title>
             <!--link to the external css file of the form -->
             <link rel="stylesheet" href="style.css">
+            <!--allo user to use the map to select the location-->
+            <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+            <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
         </head>
         <body>
             <a href="logout.php" class="logout-top-btn">Logout</a>    
