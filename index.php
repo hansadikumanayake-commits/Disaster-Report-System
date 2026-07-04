@@ -91,10 +91,10 @@ if(!isset($_SESSION["user_logged_in"])){
             <p id="location-status" class="location-status">Location not selected yet</p>
 
             <label>Latitude:</label>
-            <input type="text" name="latitude" id="latitude"  required>
+            <input type="number" name="latitude" id="latitude" step="any" required>
 
             <label>Longitude:</label>
-            <input type="text" name="longitude" id="longitude"  required>
+            <input type="number" name="longitude" id="longitude" step="any" required>
 
             <!--file input to display the photo of the disaster-->
             <label>Upload photo 1:</label>
