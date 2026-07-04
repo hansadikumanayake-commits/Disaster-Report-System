@@ -90,7 +90,7 @@ if(!isset($_SESSION["user_logged_in"])){
 
             <p id="location-status" class="location-status">Location not selected yet</p>
 
-            <label>Latitude:</label>
+            <label>Latitude:</label> <!--by step=any we'll let any decimal value to be entered in the input box-->
             <input type="number" name="latitude" id="latitude" step="any" required>
 
             <label>Longitude:</label>
