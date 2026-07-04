@@ -206,3 +206,36 @@ input[type="file"]:hover {
     color: #071f3d !important;
     font-weight: bold;
 }
+
+.location-btn {
+    width: 100%;
+    padding: 15px;
+    margin-top: 8px;
+    background: linear-gradient(135deg, #047857, #14b8a6);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 10px 24px rgba(4, 120, 87, 0.28);
+}
+
+.location-btn:hover {
+    background: linear-gradient(135deg, #064e3b, #0f766e);
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px rgba(4, 120, 87, 0.38);
+}
+
+.location-status {
+    background: linear-gradient(135deg, #ecfdf5, #f0fdf4);
+    color: #065f46;
+    padding: 13px;
+    border-radius: 14px;
+    margin-top: 13px;
+    font-size: 14px;
+    font-weight: 800;
+    border: 1px solid #a7f3d0;
+    text-align: center;
+}
