@@ -231,17 +231,23 @@ if(!isset($_SESSION["user_logged_in"])){
 
     // Stop form submitting if latitude and longitude are empty
    document.getElementById("reportForm").addEventListener("submit", function(e) {
-    let latitude = document.getElementById("latitude").value;
-    let longitude = document.getElementById("longitude").value;
+    let latitudeValue = document.getElementById("latitude").value;
+    let longitudeValue = document.getElementById("longitude").value;
 
-    if (latitude === "" || longitude === "") {
+    if (latitudeValue === "" || longitudeValue === "") {
         e.preventDefault();
         alert("Please select the location on the map, use current location, or manually enter latitude and longitude.");
         return;
     }
 
-    latitude = parseFloat(latitude);
-    longitude = parseFloat(longitude);
+    let latitude = parseFloat(latitudeValue);
+    let longitude = parseFloat(longitudeValue);
+
+    if(isNaN(latitude) || isNaN(longitude)){
+        e.preventDefault();
+        alert("Latitude and Longitude must be valid numbers.");
+        return;
+    }
 
     if (latitude < -90 || latitude > 90) {
         e.preventDefault();
