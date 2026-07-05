@@ -192,6 +192,33 @@ if(!isset($_SESSION["user_logged_in"])){
         }
     }
 
+    //update the map when user manuallly type latitude and longitude
+    function updateMarkerFromManualInput() {
+        let latitude=parseFloat(document.getElementById("latitude").value);
+        let longitude=parseFloat(document.getElementById("longitude").value);
+
+        if(!isNaN(latitude) &&
+            !isNaN(longitude) &&
+            latitude >=-90 &&
+            latitude <=90 &&
+            longitude >=-180 &&
+            longitude <=180
+        
+        ){
+            let manualLocation=[latitude,longitude];
+
+            //move mapto the manually entered location
+            map.setView(manualLocation, 15);
+
+            //if marker already exists, move it
+            if(marker){
+                marker.setLatLng(manualLocation);
+            }
+
+            //if 
+        }
+    }
+
     // Stop form submitting if latitude and longitude are empty
    document.getElementById("reportForm").addEventListener("submit", function(e) {
     let latitude = document.getElementById("latitude").value;
