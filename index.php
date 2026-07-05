@@ -215,9 +215,19 @@ if(!isset($_SESSION["user_logged_in"])){
                 marker.setLatLng(manualLocation);
             }
 
-            //if 
+            //if marker doesnt exist, create it
+            else{
+                marker=L.marker(manualLocation).addTo(map);
+            }
+            marker.bindPopup("Manually Entered Location").openPopup();
+
+            document.getElementById("location-status").innerHTML="Location entered manually";
+        
         }
     }
+    //run this function types the latitude or longitudes
+    document.getElementById("latitude").addEventListener("input", updateMarkerFromManualInput);
+    document.getElementById("longitude").addEventListener("input", updateMarkerFromManualInput);
 
     // Stop form submitting if latitude and longitude are empty
    document.getElementById("reportForm").addEventListener("submit", function(e) {
