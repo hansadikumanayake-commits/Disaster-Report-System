@@ -10,140 +10,225 @@ The system includes a login system with username, password, and OTP verification
 
 The system also includes role-based access. Normal users can access the disaster report form. Admin users can access the admin panel.
 
-The system uses OpenStreetMap in the user form, so an interactive map is displayed. When the user clicks on a certain place on the map, the latitude and longitude of that selected place are automatically detected and displayed in the form.
+The system uses OpenStreetMap with Leaflet.js instead of Google Maps. Users can select the disaster location by clicking on the map, using their current location, or manually entering latitude and longitude.
 
-The selected latitude and longitude are saved in the database and shown in the admin panel. The admin can view the reported disaster location on a map using the saved latitude and longitude.
+The selected latitude and longitude are saved in the database and displayed in the admin panel. The admin can view the reported disaster location on an OpenStreetMap map using the saved coordinates.
 
 This system is designed for disaster situations that may occur in Sri Lanka.
+
+---
 
 ## Project Overview
 
 This system is developed as a local web-based disaster reporting system. It runs using XAMPP, PHP, MySQL, and phpMyAdmin.
 
-The system has two main users: normal users and admins. Normal users can submit disaster reports. Admin users can view all submitted reports through the admin panel.
+The system has two main user roles:
 
-The system collects disaster details, user contact details, district, Grama-Niladhari Division, latitude, longitude, and disaster photos.
+1. Normal users
+2. Admin users
 
-OpenStreetMap is used to display maps in the system. The map allows users to select the exact disaster location by clicking on the map.
+Normal users can submit disaster reports through the disaster report form.
+
+Admin users can view all submitted reports through the admin panel.
+
+The system collects user details, disaster details, district, Grama-Niladhari Division, latitude, longitude, and disaster photos.
+
+OpenStreetMap is used to display interactive maps in both the user form and admin panel.
+
+---
 
 ## Purpose of the System
 
-The purpose of this system is to make disaster reporting easier and more organized.
+The purpose of this system is to make disaster reporting easier, faster, and more organized.
 
-Instead of keeping disaster details manually, the system stores the submitted reports in a database.
+Instead of keeping disaster details manually, the system stores submitted disaster reports in a database.
 
-This allows the admin to view disaster reports, check uploaded photos, identify the district and Grama-Niladhari Division, and view the incident location on a map.
+This allows the admin to view disaster reports, check uploaded photos, identify the district and Grama-Niladhari Division, and view the exact disaster location on a map.
 
-The map feature helps to identify the exact location of the disaster more clearly.
+The map feature helps to identify the disaster location more clearly using latitude and longitude.
+
+---
 
 ## Main Features
 
-* Submit disaster reports through a client form
-* Login to the system using username and password
-* Generate OTP automatically by the system for verification
-* Verify OTP before accessing the system
-* Generate a new OTP if the OTP is wrong or expired
+* User login with username and password
+* OTP verification before accessing the system
+* OTP generated automatically by the system
+* OTP valid for 5 minutes
 * Role-based access for users and admins
 * Normal users can access the disaster report form
 * Admin users can access the admin panel
-* Logout from the system
-* Enter user details like name and contact number
+* Logout function
+* Submit disaster reports through a form
+* Enter user name and contact number
 * Select disaster type from a dropdown list
 * Select district from a dropdown list
-* Enter the Grama-Niladhari Division
-* Display an interactive map in the user form
-* Allow the user to click a place on the map
-* Automatically get latitude and longitude from the selected map location
-* Show the selected latitude and longitude in the form
-* Upload up to three disaster photos
-* Store report details in a MySQL database
-* Store uploaded photos in an `uploads` folder
-* Store uploaded photo paths in the database
-* View all submitted reports in an admin panel
+* Enter Grama-Niladhari Division
+* Select disaster location using OpenStreetMap
+* Click on the map to automatically get latitude and longitude
+* Capture current location using browser geolocation
+* Manually enter latitude and longitude if needed
+* Validate latitude and longitude before saving
+* Upload up to three disaster-related photos
+* Store uploaded photos inside the `uploads` folder
+* Store photo paths in the database
+* Save report details in a MySQL database
+* View all submitted reports in the admin panel
 * Display uploaded photos in the admin panel
 * Display latitude and longitude in the admin panel
-* Show the disaster location on a map in the admin panel using saved latitude and longitude
-* User can select the disaster incident location using OpenStreetMap.
-* The system uses Leaflet.js to display the interactive map.
-* User can click on the map to automatically fill latitude and longitude.
-* User can also capture the current location using browser geolocation.
-* User can manually enter latitude and longitude if needed.
-* Admin panel displays the incident location on OpenStreetMap using saved coordinates.
-* Latitude and longitude are validated before saving the report.
+* Show disaster location on OpenStreetMap in the admin panel
+
+---
 
 ## User Roles
 
-The system has two user roles.
+### Normal User
 
-Normal users can log in, verify OTP, and access the disaster report form. They can submit disaster details, upload photos, and select the disaster location on the map.
+Normal users can:
 
-Admin users can log in, verify OTP, and access the admin panel. The admin can view all submitted disaster reports, uploaded photos, latitude, longitude, and map location.
+* Log into the system
+* Verify OTP
+* Access the disaster report form
+* Submit disaster details
+* Select location on the map
+* Use current location
+* Manually enter latitude and longitude
+* Upload disaster photos
+* Submit the report
 
-Normal users cannot access the admin panel directly.
+Normal users cannot access the admin panel.
+
+### Admin User
+
+Admin users can:
+
+* Log into the system
+* Verify OTP
+* Access the admin panel
+* View all submitted disaster reports
+* View user details
+* View disaster type
+* View district and Grama-Niladhari Division
+* View uploaded photos
+* View latitude and longitude
+* View disaster location on OpenStreetMap
+
+---
 
 ## How the System Works
 
-The system starts with the login page. The user enters the username and password.
+The system starts with the login page.
 
-If the login details are correct, the system generates an OTP automatically. The user must enter the correct OTP to continue.
+The user enters a username and password.
 
-After OTP verification, the system checks the user role. Normal users are redirected to the disaster report form. Admin users are redirected to the admin panel.
+If the login details are correct, the system generates an OTP.
 
-In the disaster report form, the user enters their name and contact number. The user also selects the disaster type, district, and enters the Grama-Niladhari Division.
+The user must enter the correct OTP before accessing the system.
 
-An OpenStreetMap map is displayed in the form. The user clicks on the exact disaster location on the map.
+After OTP verification, the system checks the user's role.
 
-When the user clicks on the map, a marker is placed on the selected location. The latitude and longitude of that location are automatically detected and displayed in the form.
+If the user is a normal user, they are redirected to the disaster report form.
 
-The user can upload up to three disaster-related photos. After clicking the submit button, the data is sent to the PHP backend.
+If the user is an admin, they are redirected to the admin panel.
 
-PHP saves the uploaded photos inside the `uploads` folder. The report details, photo paths, latitude, and longitude are stored in the MySQL database.
+In the disaster report form, the user enters their name, contact number, disaster type, district, and Grama-Niladhari Division.
 
-The admin panel retrieves all submitted disaster reports from the database. The admin can view the user details, disaster type, district, Grama-Niladhari Division, submitted date, uploaded photos, latitude, longitude, and map location.
+The user can then select the disaster location in three ways:
 
-In the admin panel, the saved latitude and longitude are used to display the disaster location on an OpenStreetMap map.
+1. Click on the OpenStreetMap map
+2. Click the current location button
+3. Manually enter latitude and longitude
+
+When the user selects a location, the latitude and longitude are displayed in the form.
+
+The user uploads up to three disaster-related photos and submits the form.
+
+The form data is sent to `submit.php`.
+
+The `submit.php` file validates the latitude and longitude before saving the report.
+
+If the latitude and longitude are valid, the report details and uploaded photo paths are saved in the MySQL database.
+
+The uploaded photos are stored inside the `uploads` folder.
+
+The admin panel retrieves all submitted disaster reports from the database.
+
+The admin can view report details, uploaded photos, latitude, longitude, and the incident location on OpenStreetMap.
+
+---
 
 ## Location and Map Feature
 
-In this system, users do not need to type latitude and longitude manually.
+The system uses OpenStreetMap instead of Google Maps.
 
-The system uses an interactive OpenStreetMap map in the user form. When the user clicks on a place on the map, the system automatically gets the latitude and longitude of that selected place.
+Leaflet.js is used to display and control the interactive map.
 
-A marker is displayed on the selected location so that the user can clearly see the place they selected.
+In the user form, the user can click on the map to select the exact disaster location.
 
-The selected latitude and longitude values are displayed in the form before submission.
+When the user clicks on the map, a marker is placed on the selected location. The latitude and longitude of that location are automatically filled into the form.
 
-These latitude and longitude values are saved in the MySQL database. They are used in the admin panel to show the disaster location on a map.
+The user can also click the current location button to capture their current browser location.
 
-This feature helps the user to report the exact disaster location more accurately.
+If needed, the user can manually enter latitude and longitude.
 
-## OpenStreetMap Usage
+The system validates latitude and longitude before saving the report.
 
-OpenStreetMap is used in this project.
+Latitude must be between `-90` and `90`.
 
-OpenStreetMap is used to display the map in the user form and admin panel.
+Longitude must be between `-180` and `180`.
 
-The map is added to the system using JavaScript and Leaflet.
+The saved latitude and longitude are used in the admin panel to show the disaster location on OpenStreetMap with a marker.
 
-Leaflet is a JavaScript library used to display interactive maps on web pages.
+---
 
-In the user form, Leaflet is used to show the OpenStreetMap map. When the user clicks on the map, JavaScript gets the latitude and longitude values from the clicked location.
+## OpenStreetMap and Leaflet Usage
 
-In the admin panel, Leaflet is used to show the saved disaster location using the latitude and longitude stored in the database.
+OpenStreetMap is used as the map provider.
+
+Leaflet.js is used as the JavaScript map library.
+
+Leaflet is used to:
+
+* Display the map in the user form
+* Display the map in the admin panel
+* Add markers to selected locations
+* Get latitude and longitude when the user clicks on the map
+* Move the marker when the user manually enters coordinates
+* Show the saved disaster location in the admin panel
+
+The map requires an internet connection because OpenStreetMap tiles are loaded online.
+
+---
 
 ## Admin Panel
 
 The admin panel can only be accessed by admin users.
 
-The admin panel displays all submitted disaster reports. Each report includes the report ID, user details, disaster type, district, Grama-Niladhari Division, submitted date, uploaded photos, latitude, longitude, and map location.
+The admin panel displays all submitted disaster reports.
 
-The saved latitude and longitude values are used to place a marker on the map in the admin panel.
+Each report includes:
 
-The admin panel helps the admin review disaster reports in an organized way and identify the location of each disaster incident clearly.
+* Report ID
+* User name
+* Contact number
+* Disaster type
+* District
+* Grama-Niladhari Division
+* Latitude
+* Longitude
+* Submitted date and time
+* Uploaded photos
+* Incident location map
+
+The saved latitude and longitude are used to place a marker on OpenStreetMap.
+
+This helps the admin clearly identify where the disaster incident happened.
+
+---
 
 ## System Access Control
 
-The system uses sessions to protect pages.
+The system uses PHP sessions to protect pages.
 
 The disaster report form can only be accessed after user login and OTP verification.
 
@@ -153,65 +238,243 @@ If a person tries to open the form or admin panel without logging in, the system
 
 The logout function clears the session and redirects the user back to the login page.
 
+---
+
 ## Technologies Used
 
-This project uses HTML, CSS, JavaScript, PHP, MySQL, XAMPP, phpMyAdmin, OpenStreetMap, and Leaflet.js
+* HTML
+* CSS
+* JavaScript
+* PHP
+* MySQL / MariaDB
+* XAMPP
+* phpMyAdmin
+* Leaflet.js
+* OpenStreetMap
 
-HTML is used to create the page structure.
+### HTML
 
-CSS is used for styling and design of the web pages.
+HTML is used to create the structure of the web pages.
 
-JavaScript is used to handle the interactive map, detect the clicked location, and display latitude and longitude values.
+### CSS
 
-Leaflet.js is used to load and control the OpenStreetMap map.
+CSS is used to style the form, admin panel, buttons, messages, photo gallery, and map sections.
+
+### JavaScript
+
+JavaScript is used to handle the interactive map, current location button, manual latitude and longitude input, and form validation.
+
+### Leaflet.js
+
+Leaflet.js is used to display and control OpenStreetMap inside the web pages.
+
+### OpenStreetMap
 
 OpenStreetMap is used as the map provider instead of Google Maps.
 
-PHP is used for backend processing, form submission, login validation, OTP generation, OTP verification, role-based redirection, photo upload handling, session handling, and database connection.
+### PHP
 
-MySQL is used to store disaster report details such as name, telephone number, disaster type, district, Grama-Niladhari Division, latitude, longitude, uploaded photo paths, username, password, OTP details, role, and submitted date and time.
+PHP is used for backend processing, form submission, login validation, OTP generation, OTP verification, role-based redirection, session handling, photo upload handling, and database connection.
+
+### MySQL / MariaDB
+
+MySQL is used to store user details, OTP details, disaster report details, photo paths, latitude, longitude, and submitted date and time.
+
+### XAMPP
+
+XAMPP is used to run Apache and MySQL locally.
+
+### phpMyAdmin
 
 phpMyAdmin is used to create and manage the database and tables.
 
-XAMPP is used to run the project locally.
+---
 
 ## Database Description
 
-The system uses a MySQL database named `disaster_report`.
+The system uses a MySQL database named `disaster_db`.
 
-Inside this database, there are two main tables named `users` and `disaster_reports`.
+Inside this database, there are two main tables:
 
-The `users` table stores username, password, OTP, OTP expiry time, and role.
+1. `users`
+2. `disaster_reports`
 
-The `disaster_reports` table stores the report ID, user's name, contact number, disaster type, district, Grama-Niladhari Division, latitude, longitude, uploaded photo paths, and submission date and time.
+### users table
 
-The actual photos are saved in the `uploads` folder. Only the photo paths are stored in the database.
+The `users` table stores login and access details.
 
-The saved latitude and longitude values are used to display the disaster location on an OpenStreetMap map in the admin panel.
+It includes:
+
+* User ID
+* Username
+* Password
+* Role
+* OTP
+* OTP expiry time
+
+### disaster_reports table
+
+The `disaster_reports` table stores submitted disaster report details.
+
+It includes:
+
+* Report ID
+* Name
+* Contact number
+* Disaster type
+* District
+* Grama-Niladhari Division
+* Latitude
+* Longitude
+* Photo 1 path
+* Photo 2 path
+* Photo 3 path
+* Submitted date and time
+
+The actual photos are saved in the `uploads` folder.
+
+Only the photo paths are stored in the database.
+
+---
+
+## Main Project Files
+
+### `login.php`
+
+Used for user and admin login.
+
+### `login_process.php`
+
+Checks username and password, generates OTP, and stores OTP details.
+
+### `verify_otp.php`
+
+Verifies the OTP entered by the user.
+
+### `index.php`
+
+Displays the disaster report form for normal users.
+
+It includes the OpenStreetMap map, current location button, manual latitude and longitude fields, and photo upload fields.
+
+### `submit.php`
+
+Receives form data, validates latitude and longitude, uploads photos, and saves report details in the database.
+
+### `admin.php`
+
+Displays all submitted disaster reports for admin users.
+
+It shows report details, uploaded photos, latitude, longitude, and the disaster location on OpenStreetMap.
+
+### `logout.php`
+
+Destroys the session and logs the user out.
+
+### `db.php`
+
+Contains the database connection.
+
+### `style.css`
+
+Contains the styling for the form, admin panel, messages, buttons, photo gallery, OTP pages, and maps.
+
+### `uploads/`
+
+Stores uploaded disaster photos.
+
+---
 
 ## Project Flow
 
-1. User logs into the system.
-2. User fills the disaster report form.
-3. User selects disaster type, district, and Grama-Niladhari Division.
-4. User selects the incident location using OpenStreetMap, current location, or manual latitude and longitude input.
-5. User uploads disaster-related photos.
-6. Form data is submitted to submit.php.
-7. submit.php validates the latitude and longitude.
-8. Valid report data is saved in the MySQL database.
-9. Admin logs into the admin panel.
-10. Admin can view report details, uploaded photos, and incident location on OpenStreetMap.
+1. User opens the login page.
+2. User enters username and password.
+3. System checks login details.
+4. System generates OTP.
+5. User enters OTP.
+6. System verifies OTP.
+7. System checks user role.
+8. Normal user is redirected to the disaster report form.
+9. Admin user is redirected to the admin panel.
+10. Normal user fills the disaster report form.
+11. User selects disaster type, district, and Grama-Niladhari Division.
+12. User selects incident location using OpenStreetMap, current location, or manual latitude and longitude input.
+13. User uploads disaster-related photos.
+14. Form data is sent to `submit.php`.
+15. `submit.php` validates latitude and longitude.
+16. Uploaded photos are saved in the `uploads` folder.
+17. Report details are saved in the MySQL database.
+18. Admin opens the admin panel.
+19. Admin views submitted reports, uploaded photos, and map location.
+
+---
+
+## How to Run the Project Locally
+
+1. Install XAMPP.
+2. Start Apache and MySQL from the XAMPP Control Panel.
+3. Copy the project folder into the `htdocs` folder.
+4. Open phpMyAdmin.
+5. Create a database named `disaster_db`.
+6. Create the required tables.
+7. Make sure the `uploads` folder exists inside the project folder.
+8. Open the project in the browser.
+
+Example URL:
+
+```text
+http://localhost/disaster_app/login.php
+```
+
+---
+
+## Important Notes
+
+* The project is designed to run locally using XAMPP.
+* The OTP is generated by the system and displayed on screen for demonstration purposes.
+* OpenStreetMap requires internet access to load the map.
+* Uploaded photos are stored inside the `uploads` folder.
+* Latitude and longitude are validated before saving the report.
+* Admin panel access is restricted to admin users only.
+* Normal users cannot directly access the admin panel.
+
+---
 
 ## Current Scope of the Project
 
-This project is designed to run on a local server using XAMPP.
+The current version of the project supports:
 
-The system currently supports user login, OTP verification, role-based access, disaster report submission, photo upload, map-based location selection, and admin report viewing.
+* User login
+* Admin login
+* OTP verification
+* Role-based access
+* Disaster report submission
+* District and Grama-Niladhari Division input
+* OpenStreetMap location selection
+* Current location capture
+* Manual latitude and longitude input
+* Latitude and longitude validation
+* Photo upload
+* Report saving in MySQL
+* Admin report viewing
+* Admin map marker display
+* Logout
 
-The OTP is generated by the system and displayed on screen for demonstration purposes.
+---
 
-The map feature uses OpenStreetMap and Leaflet in this project.
+## Future Improvements
 
+* Send OTP through email instead of displaying it on screen
+* Add password hashing for stronger login security
+* Add search and filter options in the admin panel
+* Add disaster report status such as pending, reviewed, and resolved
+* Add image type and size validation for uploaded photos
+* Add pagination for admin reports
+* Add export report feature
+* Add dashboard charts for disaster types and districts
+* Improve mobile design further
+
+---
 
 ## Author
 
