@@ -16,7 +16,6 @@ The selected latitude and longitude are saved in the database and displayed in t
 
 This system is designed for disaster situations that may occur in Sri Lanka.
 
----
 
 ## Project Overview
 
@@ -35,7 +34,6 @@ The system collects user details, disaster details, district, Grama-Niladhari Di
 
 OpenStreetMap is used to display interactive maps in both the user form and admin panel.
 
----
 
 ## Purpose of the System
 
@@ -47,7 +45,6 @@ This allows the admin to view disaster reports, check uploaded photos, identify 
 
 The map feature helps to identify the disaster location more clearly using latitude and longitude.
 
----
 
 ## Main Features
 
@@ -78,7 +75,6 @@ The map feature helps to identify the disaster location more clearly using latit
 * Display latitude and longitude in the admin panel
 * Show disaster location on OpenStreetMap in the admin panel
 
----
 
 ## User Roles
 
@@ -113,7 +109,6 @@ Admin users can:
 * View latitude and longitude
 * View disaster location on OpenStreetMap
 
----
 
 ## How the System Works
 
@@ -155,7 +150,6 @@ The admin panel retrieves all submitted disaster reports from the database.
 
 The admin can view report details, uploaded photos, latitude, longitude, and the incident location on OpenStreetMap.
 
----
 
 ## Location and Map Feature
 
@@ -179,7 +173,6 @@ Longitude must be between `-180` and `180`.
 
 The saved latitude and longitude are used in the admin panel to show the disaster location on OpenStreetMap with a marker.
 
----
 
 ## OpenStreetMap and Leaflet Usage
 
@@ -198,7 +191,6 @@ Leaflet is used to:
 
 The map requires an internet connection because OpenStreetMap tiles are loaded online.
 
----
 
 ## Admin Panel
 
@@ -224,7 +216,6 @@ The saved latitude and longitude are used to place a marker on OpenStreetMap.
 
 This helps the admin clearly identify where the disaster incident happened.
 
----
 
 ## System Access Control
 
@@ -238,7 +229,6 @@ If a person tries to open the form or admin panel without logging in, the system
 
 The logout function clears the session and redirects the user back to the login page.
 
----
 
 ## Technologies Used
 
@@ -288,7 +278,6 @@ XAMPP is used to run Apache and MySQL locally.
 
 phpMyAdmin is used to create and manage the database and tables.
 
----
 
 ## Database Description
 
@@ -335,7 +324,6 @@ The actual photos are saved in the `uploads` folder.
 
 Only the photo paths are stored in the database.
 
----
 
 ## Main Project Files
 
@@ -383,7 +371,6 @@ Contains the styling for the form, admin panel, messages, buttons, photo gallery
 
 Stores uploaded disaster photos.
 
----
 
 ## Project Flow
 
@@ -407,27 +394,6 @@ Stores uploaded disaster photos.
 18. Admin opens the admin panel.
 19. Admin views submitted reports, uploaded photos, and map location.
 
----
-
-## How to Run the Project Locally
-
-1. Install XAMPP.
-2. Start Apache and MySQL from the XAMPP Control Panel.
-3. Copy the project folder into the `htdocs` folder.
-4. Open phpMyAdmin.
-5. Create a database named `disaster_db`.
-6. Create the required tables.
-7. Make sure the `uploads` folder exists inside the project folder.
-8. Open the project in the browser.
-
-Example URL:
-
-```text
-http://localhost/disaster_app/login.php
-```
-
----
-
 ## Important Notes
 
 * The project is designed to run locally using XAMPP.
@@ -437,8 +403,6 @@ http://localhost/disaster_app/login.php
 * Latitude and longitude are validated before saving the report.
 * Admin panel access is restricted to admin users only.
 * Normal users cannot directly access the admin panel.
-
----
 
 ## Current Scope of the Project
 
@@ -458,23 +422,6 @@ The current version of the project supports:
 * Report saving in MySQL
 * Admin report viewing
 * Admin map marker display
-* Logout
-
----
-
-## Future Improvements
-
-* Send OTP through email instead of displaying it on screen
-* Add password hashing for stronger login security
-* Add search and filter options in the admin panel
-* Add disaster report status such as pending, reviewed, and resolved
-* Add image type and size validation for uploaded photos
-* Add pagination for admin reports
-* Add export report feature
-* Add dashboard charts for disaster types and districts
-* Improve mobile design further
-
----
 
 ## Author
 
