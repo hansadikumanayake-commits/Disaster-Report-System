@@ -155,7 +155,7 @@ The logout function clears the session and redirects the user back to the login 
 
 ## Technologies Used
 
-This project uses HTML, CSS, JavaScript, PHP, MySQL, XAMPP, phpMyAdmin, OpenStreetMap, and Leaflet.
+This project uses HTML, CSS, JavaScript, PHP, MySQL, XAMPP, phpMyAdmin, OpenStreetMap, and Leaflet.js
 
 HTML is used to create the page structure.
 
@@ -163,7 +163,7 @@ CSS is used for styling and design of the web pages.
 
 JavaScript is used to handle the interactive map, detect the clicked location, and display latitude and longitude values.
 
-Leaflet is used to load and control the OpenStreetMap map.
+Leaflet.js is used to load and control the OpenStreetMap map.
 
 OpenStreetMap is used as the map provider instead of Google Maps.
 
