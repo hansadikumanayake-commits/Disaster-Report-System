@@ -163,8 +163,8 @@ $result = mysqli_query($conn, $sql);
                     if(!empty($row['photo3'])){ ?>
                     <!--display the 3rd uploaded photo-->
                         <img src="<?php echo $row['photo3'];?>"  alt="Disaster Photo 3">
-                   <?php }
-                ?>
+                   <?php } ?>
+                
             </div>
         </div>
         <?php } ?>
