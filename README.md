@@ -63,6 +63,13 @@ The map feature helps to identify the exact location of the disaster more clearl
 * Display uploaded photos in the admin panel
 * Display latitude and longitude in the admin panel
 * Show the disaster location on a map in the admin panel using saved latitude and longitude
+* User can select the disaster incident location using OpenStreetMap.
+* The system uses Leaflet.js to display the interactive map.
+* User can click on the map to automatically fill latitude and longitude.
+* User can also capture the current location using browser geolocation.
+* User can manually enter latitude and longitude if needed.
+* Admin panel displays the incident location on OpenStreetMap using saved coordinates.
+* Latitude and longitude are validated before saving the report.
 
 ## User Roles
 
