@@ -235,7 +235,7 @@ The logout function clears the session and redirects the user back to the login 
 
 * HTML
 * CSS
-* JavaScript
+* JS(javascript)
 * PHP
 * MySQL / MariaDB
 * XAMPP
