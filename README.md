@@ -21,6 +21,7 @@ This system is designed for disaster situations that may occur in Sri Lanka.
 
 This system is developed as a local web-based disaster reporting system. It runs using XAMPP, PHP, MySQL, and phpMyAdmin.
 
+The Disaster Report System allows users to report disaster incidents with location details, photos, and disaster information. Admin users can view submitted reports through the admin panel.
 The system has two main user roles:
 
 1. Normal users
