@@ -46,6 +46,9 @@ This allows the admin to view disaster reports, check uploaded photos, identify 
 
 The map feature helps to identify the disaster location more clearly using latitude and longitude.
 
+## System Purpose
+
+This system helps users report disaster incidents with location details and photos.
 
 ## Main Features
 
