@@ -1,7 +1,17 @@
 # Disaster Report System
 
+
+![PHP](https://img.shields.io/badge/PHP-8%2B-777BB4)
+![MySQL](https://img.shields.io/badge/MySQL-Database-4479A1)
+![JavaScript](https://img.shields.io/badge/JavaScript-Frontend-F7DF1E)
+![Leaflet](https://img.shields.io/badge/Leaflet-Maps-199900)
+![OpenStreetMap](https://img.shields.io/badge/OpenStreetMap-Location-7EBC6F)
+![XAMPP](https://img.shields.io/badge/XAMPP-Development-FB7A24)
+
+
 ## Project Description
 
+The Disaster Report System is a web application that allows users to report disasters with location details, photos, contact information, and disaster type.
 The Disaster Report System is a web-based application developed using PHP and MySQL.
 
 The main purpose of this system is to allow users to report disaster incidents by submitting their personal details, selecting a disaster type, entering location details, selecting the incident location on a map, uploading disaster-related photos, and saving the report details in a database.
